@@ -1,0 +1,212 @@
+include mixins
+
+doctype html
+html
+    head
+    
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        meta(name="description" content="Painel Administrativo")
+        meta(name="author" content="Hudson Nicoletti")
+    
+        title  Metacon
+        
+        link(rel="stylesheet", href="assets/styles/main.css")
+    body
+            
+        header
+            .container
+                .row
+                    .col-md-12
+
+                        .search-container
+                                input(type="text" placeholder="Pesquisar:")
+                                i.glyphicon.glyphicon-remove.search-toggle
+
+                        .logo-container
+                            a(href="#"): img(src="assets/images/logo.png", alt="").img-responsive
+                            
+                        .nav-toggle.visible-md.visible-sm.visible-xs.menu-toggle
+                            i.glyphicon.glyphicon-menu-hamburger
+
+                        .menu-container
+                            .visible-lg
+                                +nav
+                    
+                    .menu-container.mobile
+                        +nav("mobile")
+    .slides
+         ul.slides-container
+             li
+                 img(src="assets/images/slider/1.jpg", alt="")
+                 .container
+                     .row
+                         .col-xs-12
+                             h2  Lorem ipsum dolor sit amet
+                             span  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae repudiandae possimus, ea, quasi natus beatae assumenda aut necessitatibus blanditiis corporis iusto doloribus quod at adipisci atque
+                             br
+                             button.btn.btn-lead Nossas Obras
+             li
+                 img(src="assets/images/slider/4.jpg", alt="")
+                 .container
+                     .row
+                         .col-xs-12
+                             h2  Lorem ipsum dolor sit amet
+                             span  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae repudiandae possimus, ea, quasi natus beatae assumenda aut necessitatibus blanditiis corporis iusto doloribus quod at adipisci atque
+                             br
+                             button.btn.btn-lead.inverted Nossas Obras
+
+        nav.slides-navigation.hidden
+            a.next: i.glyphicon.glyphicon-chevron-right
+            a.prev: i.glyphicon.glyphicon-chevron-left
+                
+                
+        section.default
+            .container
+                .row
+                    .col-xs-12.text-center
+
+                        h1.title.handwriting Porque escolher a Metacon ?
+                        hr.small.blue
+                        p.subtitle  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae corporis, vero veritatis suscipit nesciunt laborum, quia sint expedita adipisci.
+                        p.description  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim nemo minima maiores aspernatur facilis nisi temporibus quo architecto aliquid, repudiandae nam molestiae provident, rerum. Neque, mollitia velit ea debitis autem!
+        
+        section.blue
+            .container
+                .row.text-center
+                    .col-md-3.col-sm-6.col-xs-12.sm-height-padding
+                        img(src="assets/images/icons/icon-section-01.png", alt="").icon
+                        h2.showoff.thin 200
+                        span.subtitle obras entregues
+                    .col-md-3.col-sm-6.col-xs-12.sm-height-padding
+                        img(src="assets/images/icons/icon-section-02.png", alt="").icon
+                        h2.showoff.thin 21
+                        span.subtitle obras em andamento
+                    .col-md-3.col-sm-6.col-xs-12.sm-height-padding
+                        img(src="assets/images/icons/icon-section-03.png", alt="").icon
+                        h2.showoff.thin 50
+                        span.subtitle cidades atendidas
+                    .col-md-3.col-sm-6.col-xs-12.sm-height-padding
+                        img(src="assets/images/icons/icon-section-04.png", alt="").icon
+                        h2.showoff.thin 50000
+                        span.subtitle m² contruidos
+                    
+                    
+        section.dark
+            .container
+                .row.text-center
+                    .col-xs-12
+
+                        h1.title.uppercase nosso portfólio
+                        hr.small.blue
+                        p.subtitle  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae corporis, vero veritatis suscipit nesciunt laborum, quia sint expedita adipisci.
+                        
+                .row.text-center
+                    #carousel.col-md-9
+                        +carousel_item('//placehold.it/270x240/0085ff', ' Lorem ipsum dolor sit amet.')
+                        +carousel_item('//placehold.it/270x240/762543', ' Lorem ipsum dolor sit amet.')
+                        +carousel_item('//placehold.it/270x240/00ffec', ' Lorem ipsum dolor sit amet.')
+                        +carousel_item('//placehold.it/270x240/00abff', ' Lorem ipsum dolor sit amet.')
+                        +carousel_item('//placehold.it/270x240/009fff', ' Lorem ipsum dolor sit amet.')
+                        +carousel_item('//placehold.it/270x240/010101', ' Lorem ipsum dolor sit amet.')
+                                    
+                    .col-md-3.col-sm-12#carousel-cta
+                        i.glyphicon.glyphicon-chevron-right.lg-height-padding.visible-md.visible-lg#carousel-next
+                        button.btn.btn-lead Nossas Obras
+                        
+        section.aqua
+            .container
+                .row.text-center
+                    .col-md-10.col-sm-12
+                        h1.uppercase Acompanhe aqui o andamento de sua obra
+                    .col-md-2.col-sm-12
+                        button.btn.btn-lead Minha Obra
+                        
+        section.default
+            .container
+                .row
+                    .col-md-12
+                        h1.title.handwriting.font-aqua Entre em contato para que juntos possamos realizar sonhos!
+                .row.text-center
+                    form(action="" method="post" accept-charset="UTF-8").contact
+                        .col-md-10
+                            .row
+                                .col-md-4.col-sm-12: input(type="text" placeholder="Nome Completo")
+                                .col-md-4.col-sm-12: input(type="text" placeholder="Telefone")
+                                .col-md-4.col-sm-12: input(type="text" placeholder="E-Mail")
+                                .col-md-12: textarea(name="" placeholder="Mensagem")
+                        .col-md-2
+                            button.btn.btn-info: span.handwriting Enviar
+                        
+        section.aqua
+            .container
+                .row.text-center
+                    .col-md-12.social-container
+                        span.subtitle Conecte-se com a gente:
+                        ul
+                            li: a: i.fa.fa-google-plus
+                            li: a: i.fa.fa-linkedin-square
+                            li: a: i.fa.fa-pinterest
+                            li: a: i.fa.fa-twitter
+                            li: a: i.fa.fa-facebook
+                            
+        section.dark
+            .container
+                .row.text-center.footer-container
+                    .col-md-4.col-sm-12
+                        h2.uppercase últimos projetos
+                        ul
+                            li
+                                span Planet Shopping
+                                small Londrina, PR
+
+                            li
+                                span Creche Levínia Monteiro de Moraes
+                                small Londrina, PR
+
+                            li
+                                span Hotel Campinas 
+                                small Campinas, SP
+
+                            li
+                                span Hotel Lages 
+                                small Lages, SC
+                                
+                    .col-md-4.col-sm-12
+                        h2.uppercase contato
+                        ul
+                            li
+                                span
+                                    i.fa.fa-map-marker
+                                    Rua Anita Garibaldi, 25 | Centro CEP: 86020-500 
+                                small Londrina - P
+                            li
+                                span
+                                    i.fa.fa-envelope-o
+                                    email@metacon.com.br
+                            li
+                                span
+                                    i.fa.fa-phone
+                                    43 3377.1600
+                                
+                    .col-md-4.col-sm-12
+                        h2.uppercase cadastre-se
+                        p.text-left Receba primeiro as novidades e lançamentos da METACON
+                        form(action="" method="post" accept-charset="UTF-8").newsletter
+                            input(type="text" placeholder="E-Mail")
+                            button.btn.btn-info.pull-right Enviar
+                        
+                    
+        footer
+            span Todos Direitos Reservados 2015
+            
+                    
+        script(type="text/javascript" src="assets/scripts/jquery-1.11.3.min.js")
+        script(type="text/javascript" src="assets/scripts/jquery.easing.1.3.js")
+        script(type="text/javascript" src="assets/scripts/jquery.animate-enhanced.min.js")
+        script(type="text/javascript" src="assets/scripts/jquery.hammer.min.js")
+        script(type="text/javascript" src="assets/scripts/jquery.superslides.min.js")
+        script(type="text/javascript" src="assets/scripts/scrollIt.min.js")
+        script(type="text/javascript" src="assets/scripts/owl.carousel.min.js")
+        script(type="text/javascript" src="assets/scripts/functions.js")

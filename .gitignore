@@ -2,7 +2,8 @@
 
 ### grunt ###
 # Grunt usually compiles files inside this directory
-_build/
+_build/node_modules/*/
+_build/node_modules/
 
 # Grunt usually preprocesses files such as coffeescript, compass... inside the .tmp directory
 .tmp/

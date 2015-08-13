@@ -113,4 +113,20 @@ $(function() {
         
     });
 
+    
+    $(window).scroll(function(){
+        
+        var offset = $(window).scrollTop();
+        
+        if( offset > 125 )
+        {
+            $("header").addClass("sticky");
+        }
+        if( offset < 125 )
+        {
+            $("header").removeClass("sticky");
+        }
+        
+        
+    });
 });
