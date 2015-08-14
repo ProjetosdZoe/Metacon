@@ -3,6 +3,11 @@
     width: 100%
     justify-content: space-between
     flex-direction: row
+    padding: 4px 20px
+    
+    @media(max-width: 640px)
+        justify-content: center
+        flex-direction: column
     
     span
         color: $white-light
@@ -10,7 +15,7 @@
     ul
         list-style: none
         display: flex
-        justify-content: space-around
+        justify-content: space-between
         flex-direction: row
         flex-wrap: wrap
         
