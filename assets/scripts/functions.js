@@ -16,11 +16,6 @@ $(function() {
         $(this).superslides('start');
     });
     
-    //  SLIDER TOUCH    
-    document.ontouchmove = function(e) {
-        e.preventDefault();
-      };
-    
     $('.slides').hammer().on('swipeleft', function() {
         $(this).superslides('animate', 'next');
     });
