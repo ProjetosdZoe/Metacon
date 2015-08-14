@@ -1,7 +1,17 @@
 form.contact
     
-    input
+    input,textarea
         width: 100%
+        transition: all 0.3s ease-in-out
+        
+        &:focus
+            outline: 0
+            border: 2px solid $blue-light
+        
+        &.error
+            border: 2px solid #f82121
+    
+    input
         height: 50px
         border: 2px solid #d4d6d6
         margin-bottom: 15px
@@ -9,7 +19,6 @@ form.contact
         padding-left: 8px
         
     textarea
-        width: 100%
         border: 2px solid #d4d6d6
         font-size: 22px
         padding-left: 8px
@@ -20,7 +29,25 @@ form.contact
         border-radius: 50%
         width: 200px
         height: 200px
+        transition: all 0.3s ease-in-out
+        background-color: $blue-light
+        border: 0px solid $blue-light
+        
+        &:hover
+            border: 6px solid rgba($blue-dark, 0.20)
+            background-color: $blue-light        
+            animation: pulse .6s infinite
         
         span
             color: $white-light
-            font-size: 50px
+            font-size: 50px     
+            
+    label
+        position: absolute
+        top: -20px
+        opacity: 0
+        pointer-events: none
+        
+        &.error
+            color: #f82121
+            opacity: 1

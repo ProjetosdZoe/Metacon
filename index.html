@@ -17,7 +17,9 @@
             <div class="search-container">
               <input type="text" placeholder="Pesquisar:"><i class="glyphicon glyphicon-remove search-toggle"></i>
             </div>
-            <div class="logo-container"><a href="#"><img src="assets/images/logo.png" alt="" class="img-responsive"></a></div>
+            <div class="logo-container">
+              <div class="logo"></div>
+            </div>
             <div class="nav-toggle visible-md visible-sm visible-xs menu-toggle"><i class="glyphicon glyphicon-menu-hamburger"></i></div>
             <div class="menu-container">
               <div class="visible-lg">
@@ -96,16 +98,16 @@
   <section class="blue">
     <div class="container">
       <div class="row text-center">
-        <div class="col-md-3 col-sm-6 col-xs-12 sm-height-padding"><img src="assets/images/icons/icon-section-01.png" alt="" class="icon">
+        <div class="col-md-3 col-sm-6 col-xs-12 sm-height-padding scale"><img src="assets/images/icons/icon-section-01.png" alt="" class="icon">
           <h2 class="showoff thin">200</h2><span class="subtitle">obras entregues</span>
         </div>
-        <div class="col-md-3 col-sm-6 col-xs-12 sm-height-padding"><img src="assets/images/icons/icon-section-02.png" alt="" class="icon">
+        <div class="col-md-3 col-sm-6 col-xs-12 sm-height-padding scale"><img src="assets/images/icons/icon-section-02.png" alt="" class="icon">
           <h2 class="showoff thin">21</h2><span class="subtitle">obras em andamento</span>
         </div>
-        <div class="col-md-3 col-sm-6 col-xs-12 sm-height-padding"><img src="assets/images/icons/icon-section-03.png" alt="" class="icon">
+        <div class="col-md-3 col-sm-6 col-xs-12 sm-height-padding scale"><img src="assets/images/icons/icon-section-03.png" alt="" class="icon">
           <h2 class="showoff thin">50</h2><span class="subtitle">cidades atendidas</span>
         </div>
-        <div class="col-md-3 col-sm-6 col-xs-12 sm-height-padding"><img src="assets/images/icons/icon-section-04.png" alt="" class="icon">
+        <div class="col-md-3 col-sm-6 col-xs-12 sm-height-padding scale"><img src="assets/images/icons/icon-section-04.png" alt="" class="icon">
           <h2 class="showoff thin">50000</h2><span class="subtitle">m² contruidos</span>
         </div>
       </div>
@@ -199,9 +201,10 @@
       <div class="row text-center">
         <form action="" method="post" accept-charset="UTF-8" class="contact">
           <div class="col-md-10">
-            <div class="row">
-              <div class="col-md-4 col-sm-12">
-                <input type="text" placeholder="Nome Completo">
+            <div class="row text-left">
+              <div class="col-md-4 col-sm-12">                                   
+                <label class="error">* Campo Obrigatório</label>
+                <input type="text" placeholder="Nome Completo" class="error">
               </div>
               <div class="col-md-4 col-sm-12">
                 <input type="text" placeholder="Telefone">

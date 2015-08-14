@@ -3,6 +3,9 @@ module.exports = function(grunt){
         
         sass: {
             dist: {
+                options: {
+                    style: 'compressed'   // nested, compact, compressed, expanded.
+                },
                 files: {
                     '../assets/styles/main.css': 'styles/main.sass',
                 }

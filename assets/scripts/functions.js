@@ -4,6 +4,7 @@ $(function() {
         hashchange: false,
         slide_speed: 5000,
         pagination: false,
+        scrollable: false,
         play: 5000
     });
 
@@ -112,7 +113,6 @@ $(function() {
         owl.next();
         
     });
-
     
     $(window).scroll(function(){
         

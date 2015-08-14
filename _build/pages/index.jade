@@ -25,7 +25,7 @@ html
                                 i.glyphicon.glyphicon-remove.search-toggle
 
                         .logo-container
-                            a(href="#"): img(src="assets/images/logo.png", alt="").img-responsive
+                            .logo
                             
                         .nav-toggle.visible-md.visible-sm.visible-xs.menu-toggle
                             i.glyphicon.glyphicon-menu-hamburger
@@ -75,19 +75,19 @@ html
         section.blue
             .container
                 .row.text-center
-                    .col-md-3.col-sm-6.col-xs-12.sm-height-padding
+                    .col-md-3.col-sm-6.col-xs-12.sm-height-padding.scale
                         img(src="assets/images/icons/icon-section-01.png", alt="").icon
                         h2.showoff.thin 200
                         span.subtitle obras entregues
-                    .col-md-3.col-sm-6.col-xs-12.sm-height-padding
+                    .col-md-3.col-sm-6.col-xs-12.sm-height-padding.scale
                         img(src="assets/images/icons/icon-section-02.png", alt="").icon
                         h2.showoff.thin 21
                         span.subtitle obras em andamento
-                    .col-md-3.col-sm-6.col-xs-12.sm-height-padding
+                    .col-md-3.col-sm-6.col-xs-12.sm-height-padding.scale
                         img(src="assets/images/icons/icon-section-03.png", alt="").icon
                         h2.showoff.thin 50
                         span.subtitle cidades atendidas
-                    .col-md-3.col-sm-6.col-xs-12.sm-height-padding
+                    .col-md-3.col-sm-6.col-xs-12.sm-height-padding.scale
                         img(src="assets/images/icons/icon-section-04.png", alt="").icon
                         h2.showoff.thin 50000
                         span.subtitle m² contruidos
@@ -131,8 +131,10 @@ html
                 .row.text-center
                     form(action="" method="post" accept-charset="UTF-8").contact
                         .col-md-10
-                            .row
-                                .col-md-4.col-sm-12: input(type="text" placeholder="Nome Completo")
+                            .row.text-left
+                                .col-md-4.col-sm-12                                    
+                                    label.error * Campo Obrigatório
+                                    input(type="text" placeholder="Nome Completo").error
                                 .col-md-4.col-sm-12: input(type="text" placeholder="Telefone")
                                 .col-md-4.col-sm-12: input(type="text" placeholder="E-Mail")
                                 .col-md-12: textarea(name="" placeholder="Mensagem")
