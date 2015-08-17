@@ -137,7 +137,9 @@ html
                                     input(type="text" placeholder="Nome Completo").error
                                 .col-md-4.col-sm-12: input(type="text" placeholder="Telefone")
                                 .col-md-4.col-sm-12: input(type="text" placeholder="E-Mail")
-                                .col-md-12: textarea(name="" placeholder="Mensagem")
+                                .col-md-12
+                                    label.error * Campo Obrigatório
+                                    textarea(name="" placeholder="Mensagem").error
                         .col-md-2
                             button.btn.btn-info: span.handwriting Enviar
                         
