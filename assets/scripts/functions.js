@@ -108,6 +108,28 @@ $(function() {
         
     });
     
+    $("#contact").submit(function(){
+        
+        $(this).find("input").each(function(){
+            
+            
+            
+        });
+        
+        return false;
+    });
+    
+    $("#contact input, #contact textarea").focus(function(){
+    
+        if( $(this).hasClass("error") ){
+            $(this).removeClass("error");
+            $(this).siblings().css({
+                'opacity' : 0
+            });
+        }
+        
+    });
+    
     $(window).scroll(function(){
         
         var offset = $(window).scrollTop();

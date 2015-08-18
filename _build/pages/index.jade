@@ -104,12 +104,12 @@ html
                         
                 .row.text-center
                     #carousel.col-md-9
-                        +carousel_item('//placehold.it/270x240/0085ff', ' Lorem ipsum dolor sit amet.')
-                        +carousel_item('//placehold.it/270x240/762543', ' Lorem ipsum dolor sit amet.')
-                        +carousel_item('//placehold.it/270x240/00ffec', ' Lorem ipsum dolor sit amet.')
-                        +carousel_item('//placehold.it/270x240/00abff', ' Lorem ipsum dolor sit amet.')
-                        +carousel_item('//placehold.it/270x240/009fff', ' Lorem ipsum dolor sit amet.')
-                        +carousel_item('//placehold.it/270x240/010101', ' Lorem ipsum dolor sit amet.')
+                        +carousel_item('//placehold.it/270x240/0085ff', 'Lorem ipsum dolor sit amet.')
+                        +carousel_item('//placehold.it/270x240/762543', 'Lorem ipsum dolor sit amet.')
+                        +carousel_item('//placehold.it/270x240/00ffec', 'Lorem ipsum dolor sit amet.')
+                        +carousel_item('//placehold.it/270x240/00abff', 'Lorem ipsum dolor sit amet.')
+                        +carousel_item('//placehold.it/270x240/009fff', 'Lorem ipsum dolor sit amet.')
+                        +carousel_item('//placehold.it/270x240/010101', 'Lorem ipsum dolor sit amet.')
                                     
                     .col-md-3.col-sm-12#carousel-cta
                         i.glyphicon.glyphicon-chevron-right.lg-height-padding.visible-md.visible-lg#carousel-next
@@ -129,17 +129,21 @@ html
                     .col-md-12
                         h1.title.handwriting.font-aqua Entre em contato para que juntos possamos realizar sonhos!
                 .row.text-center
-                    form(action="" method="post" accept-charset="UTF-8").contact
+                    form(action="" method="post" accept-charset="UTF-8").contact#contact
                         .col-md-10
                             .row.text-left
                                 .col-md-4.col-sm-12                                    
                                     label.error * Campo Obrigatório
                                     input(type="text" placeholder="Nome Completo").error
-                                .col-md-4.col-sm-12: input(type="text" placeholder="Telefone")
-                                .col-md-4.col-sm-12: input(type="text" placeholder="E-Mail")
-                                .col-md-12: textarea(name="" placeholder="Mensagem")
+                                .col-md-4.col-sm-12
+                                    input(type="text" placeholder="Telefone")
+                                .col-md-4.col-sm-12
+                                    input(type="text" placeholder="E-Mail")
+                                .col-md-12
+                                    label.error * Campo Obrigatório
+                                    textarea(name="" placeholder="Mensagem").error
                         .col-md-2
-                            button.btn.btn-info: span.handwriting Enviar
+                            button.btn.btn-info(type="submit"): span.handwriting Enviar
                         
         section.aqua
             .container
