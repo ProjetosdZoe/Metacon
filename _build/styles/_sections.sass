@@ -65,15 +65,17 @@ section
         &.subtitle
             font-size: 14px
             text-transform: uppercase
-            padding-left: 100px
-            padding-right: 100px
             padding-top: 7px
             letter-spacing: 1.5px
             
         &.description
-            padding-left: 100px
-            padding-right: 100px
             padding-top: 7px
+            
+        @media(min-width: 960px)
+            &.subtitle,
+            &.description
+                padding-left: 100px
+                padding-right: 100px
             
     span 
         color: $black-light
