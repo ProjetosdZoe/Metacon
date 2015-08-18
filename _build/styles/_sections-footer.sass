@@ -53,9 +53,12 @@ footer
     font-size: 14px
     color: $white-light
     padding: 10px 0px
-    position: relative
     
-    .developer
-        position: absolute
-        right: 80px
-        bottom: 5px
+    .container
+        display: flex
+        align-items: center
+        justify-content: space-between
+        flex-direction: row
+        
+        @media(max-width: 640px)
+            flex-direction: column
