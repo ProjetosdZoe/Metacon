@@ -50,3 +50,33 @@ button.btn-lead
         &:hover
             background-color: $black-light
             color: $white-light
+        
+.scroll-top
+    position: fixed
+    right: 10px
+    bottom: 10px
+    width: 48px
+    height: 48px
+    background-color: $white-light
+    text-align: center
+    display: flex
+    justify-content: center
+    align-content: center
+    border-radius: 50%
+    transition: all 0.4s ease-in-out
+    opacity: 0
+    box-shadow: 0px 2px 3px $black-dark
+    
+    a
+        display: block
+        text-decoration: none
+        color: $black-dark
+        font-size: 30px
+        cursor: pointer
+        
+    &:hover
+        background-color: $blue-light
+        animation: pulse 0.6s infinite 
+        
+        a
+            color: $white-light
