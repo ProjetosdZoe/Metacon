@@ -5,7 +5,7 @@ html
     head
     
         meta(charset="utf-8")
-        meta(name="viewport" content="width=device-width, initial-scale=1")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0")
         meta(name="description" content="Painel Administrativo")
         meta(name="author" content="Hudson Nicoletti")
     
@@ -104,12 +104,12 @@ html
                         
                 .row.text-center
                     #carousel.col-md-9
-                        +carousel_item('//placehold.it/270x240/0085ff', ' Lorem ipsum dolor sit amet.')
-                        +carousel_item('//placehold.it/270x240/762543', ' Lorem ipsum dolor sit amet.')
-                        +carousel_item('//placehold.it/270x240/00ffec', ' Lorem ipsum dolor sit amet.')
-                        +carousel_item('//placehold.it/270x240/00abff', ' Lorem ipsum dolor sit amet.')
-                        +carousel_item('//placehold.it/270x240/009fff', ' Lorem ipsum dolor sit amet.')
-                        +carousel_item('//placehold.it/270x240/010101', ' Lorem ipsum dolor sit amet.')
+                        +carousel_item('//placehold.it/270x240/0085ff', 'Lorem ipsum dolor sit amet.')
+                        +carousel_item('//placehold.it/270x240/762543', 'Lorem ipsum dolor sit amet.')
+                        +carousel_item('//placehold.it/270x240/00ffec', 'Lorem ipsum dolor sit amet.')
+                        +carousel_item('//placehold.it/270x240/00abff', 'Lorem ipsum dolor sit amet.')
+                        +carousel_item('//placehold.it/270x240/009fff', 'Lorem ipsum dolor sit amet.')
+                        +carousel_item('//placehold.it/270x240/010101', 'Lorem ipsum dolor sit amet.')
                                     
                     .col-md-3.col-sm-12#carousel-cta
                         i.glyphicon.glyphicon-chevron-right.lg-height-padding.visible-md.visible-lg#carousel-next
@@ -135,6 +135,10 @@ html
                                 .col-md-4.col-sm-12                                    
                                     label.error * Campo Obrigatório
                                     input(type="text" placeholder="Nome Completo").error
+                                .col-md-4.col-sm-12
+                                    input(type="text" placeholder="Telefone")
+                                .col-md-4.col-sm-12
+                                    input(type="text" placeholder="E-Mail")
                                 .col-md-4.col-sm-12: input(type="text" placeholder="Telefone")
                                 .col-md-4.col-sm-12: input(type="text" placeholder="E-Mail")
                                 .col-md-12
@@ -212,8 +216,6 @@ html
                     
         script(type="text/javascript" src="assets/scripts/jquery-1.11.3.min.js")
         script(type="text/javascript" src="assets/scripts/jquery.easing.1.3.js")
-        script(type="text/javascript" src="assets/scripts/jquery.animate-enhanced.min.js")
-        script(type="text/javascript" src="assets/scripts/jquery.hammer.min.js")
         script(type="text/javascript" src="assets/scripts/jquery.superslides.min.js")
         script(type="text/javascript" src="assets/scripts/scrollIt.min.js")
         script(type="text/javascript" src="assets/scripts/owl.carousel.min.js")

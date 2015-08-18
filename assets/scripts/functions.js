@@ -93,7 +93,6 @@ $(function() {
     });
     
     $("#contact").submit(function(){
-        
         $(this).find("input").each(function(){
             
             
@@ -102,7 +101,7 @@ $(function() {
         
         return false;
     });
-    
+
     $("#contact input, #contact textarea").focus(function(){
         
         if( $(this).hasClass("error") ){
