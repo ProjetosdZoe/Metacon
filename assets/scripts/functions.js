@@ -21,8 +21,6 @@ $(function() {
         
     });
     
-    //
-    
     $('.search-toggle').on('click', function(){
         
         var $this = this,
