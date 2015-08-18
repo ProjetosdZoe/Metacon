@@ -4,24 +4,7 @@ $(function() {
         hashchange: false,
         slide_speed: 5000,
         pagination: false,
-        scrollable: false,
         play: 5000
-    });
-
-    $('.slides').on('mouseenter', function() {
-        $(this).superslides('stop');
-    });
-    
-    $('.slides').on('mouseleave', function() {
-        $(this).superslides('start');
-    });
-    
-    $('.slides').hammer().on('swipeleft', function() {
-        $(this).superslides('animate', 'next');
-    });
-
-    $('.slides').hammer().on('swiperight', function() {
-        $(this).superslides('animate', 'prev');
     });
     
     //  SLIDER NAVIGATION
@@ -106,6 +89,28 @@ $(function() {
         
         var owl = $("#carousel").data('owlCarousel');
         owl.next();
+        
+    });
+    
+    $("#contact").submit(function(){
+        
+        $(this).find("input").each(function(){
+            
+            
+            
+        });
+        
+        return false;
+    });
+    
+    $("#contact input, #contact textarea").focus(function(){
+    
+        if( $(this).hasClass("error") ){
+            $(this).removeClass("error");
+            $(this).siblings().css({
+                'opacity' : 0
+            });
+        }
         
     });
     
