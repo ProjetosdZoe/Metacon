@@ -6,22 +6,6 @@ $(function() {
         pagination: false,
         play: 5000
     });
-
-//    $('.slides').on('mouseenter', function() {
-//        $(this).superslides('stop');
-//    });
-//    
-//    $('.slides').on('mouseleave', function() {
-//        $(this).superslides('start');
-//    });
-//    
-//    $('.slides').hammer().on('swipeleft', function() {
-//        $(this).superslides('animate', 'next');
-//    });
-//
-//    $('.slides').hammer().on('swiperight', function() {
-//        $(this).superslides('animate', 'prev');
-//    });
     
     //  SLIDER NAVIGATION
     $('nav.slides-navigation a').on('click', function(){
@@ -109,7 +93,6 @@ $(function() {
     });
     
     $("#contact").submit(function(){
-        
         $(this).find("input").each(function(){
             
             
@@ -118,9 +101,9 @@ $(function() {
         
         return false;
     });
-    
+
     $("#contact input, #contact textarea").focus(function(){
-    
+        
         if( $(this).hasClass("error") ){
             $(this).removeClass("error");
             $(this).siblings().css({
@@ -130,9 +113,17 @@ $(function() {
         
     });
     
-    $(window).scroll(function(){
+    $(".scroll-top").on("click", function(){
+       
+        $('html, body').animate({
+            scrollTop : 0
+        },800);
         
-        var offset = $(window).scrollTop();
+        return false;
+    });
+    
+    function stickyHeader(offset)
+    {
         
         if( offset > 125 )
         {
@@ -142,7 +133,36 @@ $(function() {
         {
             $("header").removeClass("sticky");
         }
+    }
+    
+    function scrollTop(offset)
+    {
         
+        var slider = $(".slides"),
+            topbtn = $(".scroll-top"),
+            toggleH = (slider.height()/4);
         
-    });
+        if( offset > toggleH )
+        {            
+            topbtn.css({
+                'opacity' : 1
+            });            
+        }
+        if( offset < toggleH )
+        {
+            topbtn.css({
+                'opacity' : 0
+            });         
+        }
+        
+    }
+    
+    $(window).scroll(function(){
+    
+        var offset = $(window).scrollTop();
+        
+        stickyHeader(offset);
+        scrollTop(offset);
+        
+    }).scroll();
 });
