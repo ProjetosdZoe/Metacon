@@ -15,7 +15,7 @@ html
         link(rel="shortcut icon" href="/favicon.ico")
     body
             
-        header(data-scroll-index="0")
+        header
             .container
                 .row
                     .col-md-12
@@ -37,64 +37,85 @@ html
                     .menu-container.mobile
                         +nav("mobile")
                 
-        .slides
-             ul.slides-container
-                 li
-                     img(src="assets/images/slider/1.jpg", alt="")
-                     .container
-                         .row
-                             .col-xs-12
-                                 h2  Lorem ipsum dolor sit amet
-                                 span  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae repudiandae possimus, ea, quasi natus beatae assumenda aut necessitatibus blanditiis corporis iusto doloribus quod at adipisci atque
-                                 br
-                                 button.btn.btn-lead Nossas Obras
-                 li
-                     img(src="assets/images/slider/4.jpg", alt="")
-                     .container
-                         .row
-                             .col-xs-12
-                                 h2  Lorem ipsum dolor sit amet
-                                 span  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae repudiandae possimus, ea, quasi natus beatae assumenda aut necessitatibus blanditiis corporis iusto doloribus quod at adipisci atque
-                                 br
-                                 button.btn.btn-lead.inverted Nossas Obras
-
-            nav.slides-navigation.hidden
-                a.next: i.glyphicon.glyphicon-chevron-right
-                a.prev: i.glyphicon.glyphicon-chevron-left
+        section.hero.about
+            h2.title A Metacon
                 
                 
-        section.default(data-scroll-index="1")
+        section.default.contents-about
             .container
                 .row
-                    .col-xs-12.text-center
+                    .col-md-6.col-sm-12.map-left
+                        
+                        img(src="/assets/images/map.jpg", alt="", class="img-responsive map", usemap="coords")
+                        map(name="coords", id="map-coords")
+                            area(shape="circle", coords="318,375,17", href="#", data-info="0")
+                            area(shape="circle", coords="353,338,18", href="#", data-info="1")
+                            area(shape="circle", coords="484,347,18", href="#", data-info="2")
+                            area(shape="circle", coords="440,274,20", href="#", data-info="3")
+                            area(shape="circle", coords="310,506,19", href="#", data-info="4")
+                            area(shape="circle", coords="329,429,20", href="#", data-info="5")
+                            area(shape="circle", coords="504,202,18", href="#", data-info="6")
+                            area(shape="circle", coords="277,399,21", href="#", data-info="7")
+                
+                
+                    .col-md-6.col-sm-12.map-right
+                    
+                        p.info
+                            b.blue Há 5 anos entre as 
+                            b.green 100 maiores construtoras 
+                            b.blue do Brasil segundo 
+                                strong Ranking ITC. 
+                            br
+                            | Com mais de 
+                            b.blue
+                                 strong 30 
+                                | empreendimentos executados e
+                            b.blue 
+                                strong
+                                    | 263.470,53 m <sup>2</sup> construídos.
+                                    
+                        .map-info
+                        
+                            span.title 
+                            span.sub 
+                            
+                            .stats
+                            
+                                .item(data-stats="1")
+                                    img(src="/assets/images/icons/icon-section-01.png", alt="Executado")
+                                    span 
+                                    strong Executado
+                                .item(data-stats="2")
+                                    img(src="/assets/images/icons/icon-section-02.png", alt="Andamento")
+                                    span 
+                                    strong Executado
+                                .item(data-stats="3")
+                                    img(src="/assets/images/icons/icon-section-05.png", alt="Consultoria e Desenvolvimento")
+                                    span 
+                                    strong Consultoria e Desenvolvimento
+                                    
+                .row
+                    .col-sm-12
+                        p.headline A Construtora Metacon Engenharia nasceu em 20 de julho de 1991, em Londrina, materializando o sonho do sócio fundador Renato Fogaça. Com mais de 30 empreendimentos imobiliários executados, vem, desde sua fundação, atuando nos mais diversos segmentos de mercado e, há 5 anos, conquistando posição entre as 100 maiores construtoras do Brasil. Suas atividades incluem interface com investidores, incorporações imobiliárias, execução e acompanhamento de obras, com principais campos de atuação em empreendimentos comerciais, residenciais, condomínios horizontais, shoppings, loteamentos e grande destaque em hotéis. 
+                        
+            .row
+                 .about-box
+                     .box
+                         .box-title.second
+                             h2 Missão
+                         .box-text
+                             Construir sempre! Criar produtos e prestar serviços que gerem satisfação em todas as suas fases desde sua concepção até sua entrega ao mercado. Gerando produtos de alta qualidade e que ofereçam maior rentabilidade e resultados a seus clientes e investidores.
+                             
+                     .box
+                         .box-title
+                             h2 Missão
+                         .box-text
+                             Construir sempre! Criar produtos e prestar serviços que gerem satisfação em todas as suas fases desde sua concepção até sua entrega ao mercado. Gerando produtos de alta qualidade e que ofereçam maior rentabilidade e resultados a seus clientes e investidores.
+                    
 
-                        h1.title.handwriting Porque escolher a Metacon ?
-                        hr.small.blue
-                        p.subtitle  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae corporis, vero veritatis suscipit nesciunt laborum, quia sint expedita adipisci.
-                        p.description  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim nemo minima maiores aspernatur facilis nisi temporibus quo architecto aliquid, repudiandae nam molestiae provident, rerum. Neque, mollitia velit ea debitis autem!
-        
-        section.blue(data-scroll-index="2")
-            .container
-                .row.text-center
-                    .col-md-3.col-sm-6.col-xs-12.sm-height-padding.scale
-                        img(src="assets/images/icons/icon-section-01.png", alt="").icon
-                        h2.showoff.thin 200
-                        span.subtitle obras entregues
-                    .col-md-3.col-sm-6.col-xs-12.sm-height-padding.scale
-                        img(src="assets/images/icons/icon-section-02.png", alt="").icon
-                        h2.showoff.thin 21
-                        span.subtitle obras em andamento
-                    .col-md-3.col-sm-6.col-xs-12.sm-height-padding.scale
-                        img(src="assets/images/icons/icon-section-03.png", alt="").icon
-                        h2.showoff.thin 50
-                        span.subtitle cidades atendidas
-                    .col-md-3.col-sm-6.col-xs-12.sm-height-padding.scale
-                        img(src="assets/images/icons/icon-section-04.png", alt="").icon
-                        h2.showoff.thin 50000
-                        span.subtitle m² contruidos
                     
                         
-        section.aqua(data-scroll-index="6")
+        section.aqua
             .container
                 .row.text-center
                     .col-md-12.social-container
@@ -106,7 +127,7 @@ html
                             li: a: i.fa.fa-twitter
                             li: a: i.fa.fa-facebook
                             
-        section.dark(data-scroll-index="7")
+        section.dark
             .container
                 .row.text-center.footer-container
                     .col-md-4.col-sm-12
@@ -128,6 +149,7 @@ html
                                 span Hotel Lages 
                                 small Lages, SC
                                 
+                    
                     .col-md-4.col-sm-12
                         h2.uppercase contato
                         ul

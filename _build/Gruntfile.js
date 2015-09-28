@@ -18,8 +18,23 @@ module.exports = function(grunt){
                     pretty: true
                 },
                 files: {
-                    "../index.html": "pages/index.jade"
+                    "../index.html": "pages/index.jade",
+                    "../about.html": "pages/about.jade"
                 }
+            }
+        },
+        
+        postcss: {
+            options: {
+                map: true,
+                processors: [
+                    require('autoprefixer-core')({
+                        browsers: ['last 2 versions']
+                    })
+                ]
+            },
+            dist: {
+                src: '../assets/styles/*.css'
             }
         },
         
@@ -27,7 +42,7 @@ module.exports = function(grunt){
             sass: 
             {
                 files: ['styles/*.sass'],
-                tasks: ['sass'],
+                tasks: ['sass','postcss:dist'],
                 options: {
                   livereload: true,
                 }
@@ -56,5 +71,6 @@ module.exports = function(grunt){
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-jade');
+    grunt.loadNpmTasks('grunt-postcss');
     grunt.registerTask('default', ['watch'])
 }

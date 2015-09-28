@@ -1,0 +1,136 @@
+section.hero.about
+    width: 100%
+    height: 600px
+    display: flex
+    align-items: center
+    justify-content: center
+    overflow: hidden
+    background: 
+        image: url(../images/hero-section/about.jpg)
+        repeat: no-repeat
+        size: cover
+        position: 0 0
+        attachment: fixed
+        
+    transition-timing-function: linear
+        
+        
+    h2.title
+        font-size: 72px
+        color: $white-light
+        line-height: 90px
+        border-bottom: 4px solid $blue-light
+        text-transform: uppercase
+        
+.contents-about
+        
+    .map-left
+        map
+            area 
+                cursor: pointer
+
+    .map-right
+
+        p.info
+            font: 
+                size: 24px
+                color: $black-dark
+
+            b
+                font-weight: 400
+
+                &.blue
+                    color: $blue-light
+                &.green
+                    color: $green-light
+
+
+        .map-info
+            padding: 22px 0
+            display: flex
+            align-items: center
+            justify-content: center
+            flex-direction: column
+
+            span.title
+                display: block
+                padding: 6px 16px
+                border: 2px solid $blue-light
+                text-transform: uppercase
+                background-color: transparent
+                color: $black-light
+                font:
+                    size: 22px
+                    weight: 900 
+
+                transition: all 0.3s ease-in-out
+
+                &:hover
+                    background-color: $blue-light
+                    color: $white-light
+
+            span.sub
+                display: block
+                width: 100%
+                padding: 10px 0
+                text-transform: uppercase
+                text-align: center
+                font: 
+                    size: 16px
+                    color: $black-light
+
+
+            .stats
+                display: flex
+                align-items: center
+                justify-content: space-between
+                flex-direction: row
+
+                .item
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    flex-direction: column
+                    text-align: center
+                    width: 180px
+
+                    img
+                        padding: 0 0 20px 0
+
+                    span
+                        display: block
+                        font:
+                            size: 28px
+                            weight: 700
+
+                    strong
+                        display: block
+                        text-transform: uppercase
+                        font:
+                            size: 18px
+                            weight: 900
+                            
+                            
+    p.headline
+        font: 
+            size: 18px
+            weight: 400
+            
+    .about-box
+        width: 100%
+        
+        .box
+            display: flex
+            align-items: center
+            justify-content: center
+            
+            .second
+                order: 2 !important
+            
+            .box-title
+                width: 50%
+                order: 1
+            .box-text
+                width: 50%
+                order: 2
+                

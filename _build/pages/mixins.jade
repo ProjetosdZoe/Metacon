@@ -1,23 +1,14 @@
 mixin nav(mobile)
     nav(class=mobile)
         ul
-            li: a(href="#") Home
-            li: a(href="#") A Metacon
-            li: a(href="#") Investimentos
-            li: a(href="#") Lançamentos
-            li: a(href="#") Portfólio
-            li: a(href="#") Sua Obra 
-            li: a(href="#") Contato 
+            li: a(href="/") Home
+            li: a(href="/about.html") A Metacon
+            li: a(href="/investimentos.html") Investimentos
+            li: a(href="/lancamentos.html") Lançamentos
+            li: a(href="/portfolio.html") Portfólio
+            li: a(href="/minha-obra.html") Sua Obra 
+            li: a(href="/contact.html") Contato 
             li.visible-lg: i.glyphicon.glyphicon-search.search-toggle
             
         .nav-toggle.visible-md.visible-sm.visible-xs.menu-toggle
             i.glyphicon.glyphicon-remove.remove
-            
-            
-mixin carousel_item(image,title)
-    .col-md-3.item
-        figure
-            img(src=image, alt="")
-            .cta
-                button.btn.btn-info veja detalhes
-                span: title
