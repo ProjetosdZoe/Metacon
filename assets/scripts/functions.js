@@ -172,8 +172,8 @@
         
         if( $map.length )
         {
-            $("#map-coords area[data-info='0']").mouseover();
             mapInteractive();
+            $("#map-coords area[data-info='0']").mouseover();
         }        
         
         $.scrollSpeed(100, 800);
