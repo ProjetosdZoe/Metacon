@@ -24,10 +24,10 @@ section.hero.about
         
 .contents-about
         
-    .map-left
-        map
-            area 
-                cursor: pointer
+
+    map
+        area 
+            cursor: pointer !important
 
     .map-right
 
@@ -123,14 +123,47 @@ section.hero.about
             display: flex
             align-items: center
             justify-content: center
+            flex-direction: row
             
             .second
-                order: 2 !important
+                order: 3 !important
             
             .box-title
+                background:
+                    color: $blue-light
+                color: $white-light
+                padding: 25px 20px 60px 20px
                 width: 50%
                 order: 1
+                height: 100%
+                
+                h2
+                    font:
+                        size: 36px
+                        weight: 100
             .box-text
+                height: 100%
                 width: 50%
                 order: 2
+                
+                span
+                    display: block
+                    width: 80px
+                    height: 4px
+                    background-color: $blue-light
+                    margin: 0 20px
+                    clear: both
+                    
+                    &.right
+                        float: right
+                    &.left
+                        float: left
+                
+                p
+                    padding: 25px 20px
+                    float: left
+                    clear: both
+                    display: block
+                    font:
+                        size: 16px
                 
