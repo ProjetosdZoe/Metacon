@@ -134,12 +134,6 @@ section.hero.about
             @media( max-width: 960px )
                 flex-direction: column
             
-            .second
-                order: 3 !important
-                
-                @media( max-width: 960px )
-                    order: 2 !important
-            
             .box-title
                 background:
                     color: $blue-light
@@ -149,6 +143,15 @@ section.hero.about
                 order: 1
                 height: 100%
                 
+                &:not(.second)
+                    text-align: right
+                
+                &.second
+                    order: 3 !important
+                
+                    @media( max-width: 960px )
+                        order: 1 !important
+                    
                 @media( max-width: 960px )
                     width: 100%
                 
@@ -185,3 +188,86 @@ section.hero.about
                     font:
                         size: 16px
                 
+                        
+    .about-icon
+        width: 100%
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-direction: column
+        text-align: center
+        padding: 20px 0
+        
+        .icon
+            display: flex
+            align-items: center
+            justify-content: center
+            width: 130px
+            height: 130px
+            border: solid 4px $blue-light
+            border-radius: 50%
+            position: relative
+            
+            &:before , &:after
+                content: ""
+                position: absolute
+                width: 50px
+                height: 2px
+                top: 50%
+                margin-top: -1px
+                background: $blue-light
+            
+            &:before
+                left: -50px
+            
+            &:after
+                right: -50px
+            
+        .title
+            padding: 10px 0
+            font: 
+                size: 16px
+        .text
+            text-align: left
+            font: 
+                size: 14px
+                
+                
+    .carousel-item
+        width: 100%
+        height: auto
+        position: relative
+        
+        a.next
+            position: absolute
+            right: -50px
+            top: 50%
+            display: block
+            color: $blue-light
+            text-decoration: none
+            transition: all 0.3s ease-in-out
+            cursor: pointer
+            font:
+                size: 80px
+                weight: 300
+                
+            &:active, &:link, &:visited
+                text-decoration: none
+                color: $blue-light
+            
+            &:hover
+                color: $blue-dark
+        
+        h2.name
+            font-weight: 300
+            padding: 0 0 20px 0
+            margin: 0
+            
+            strong
+                color: $blue-light
+                padding: 0 14px
+                font-weight: 900
+                
+        p
+            font-size: 14px
+            padding: 6px 0
