@@ -38,11 +38,19 @@ module.exports = function(grunt){
             }
         },
         
+        rucksack: {
+            compile: {
+                files: {
+                    '../assets/styles/main.css': '../assets/styles/main.css'
+                }
+            }
+        },
+        
         watch: {
             sass: 
             {
                 files: ['styles/*.sass'],
-                tasks: ['sass','postcss:dist'],
+                tasks: ['sass','postcss:dist','rucksack'],
                 options: {
                   livereload: true,
                 }
@@ -71,6 +79,7 @@ module.exports = function(grunt){
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-jade');
+    grunt.loadNpmTasks('grunt-rucksack');
     grunt.loadNpmTasks('grunt-postcss');
     grunt.registerTask('default', ['watch'])
 }
