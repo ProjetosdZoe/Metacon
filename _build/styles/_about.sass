@@ -22,6 +22,9 @@ section.hero.about
         border-bottom: 4px solid $blue-light
         text-transform: uppercase
         
+        @media( max-width: 640px )
+            font-size: 62px
+        
 .contents-about
         
 
@@ -125,8 +128,14 @@ section.hero.about
             justify-content: center
             flex-direction: row
             
+            @media( max-width: 960px )
+                flex-direction: column
+            
             .second
                 order: 3 !important
+                
+                @media( max-width: 960px )
+                    order: 2 !important
             
             .box-title
                 background:
@@ -137,6 +146,9 @@ section.hero.about
                 order: 1
                 height: 100%
                 
+                @media( max-width: 960px )
+                    width: 100%
+                
                 h2
                     font:
                         size: 36px
@@ -145,6 +157,9 @@ section.hero.about
                 height: 100%
                 width: 50%
                 order: 2
+                
+                @media( max-width: 960px )
+                    width: 100%
                 
                 span
                     display: block
