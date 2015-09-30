@@ -15,6 +15,8 @@
             $map        = $("#map-coords"),
             $mapArea    = $("#map-coords area"),
             $mapInfo    = $(".map-info"),
+            $carousel   = $("#carousel"),
+            $carouselN  = $("#carousel-next")
             SSConfig    = {
                 hashchange: false,
                 slide_speed: 5000,
@@ -174,7 +176,22 @@
         {
             mapInteractive();
             $("#map-coords area[data-info='0']").mouseover();
-        }        
+        } 
+        
+        if( $carousel.length )
+        {
+            $carousel.owlCarousel({
+ 
+                  navigation : false, // Show next and prev buttons
+                  slideSpeed : 300,
+                  paginationSpeed : 400,
+                  singleItem:true
+ 
+            });
+            
+            var owl = $carousel.data('owlCarousel');
+            $carouselN.on("click", function(){ owl.next()  });
+        }
         
         $.scrollSpeed(100, 800);
         $.scrollIt();

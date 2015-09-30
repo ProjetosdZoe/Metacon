@@ -12,3 +12,14 @@ mixin nav(mobile)
             
         .nav-toggle.visible-md.visible-sm.visible-xs.menu-toggle
             i.glyphicon.glyphicon-remove.remove
+            
+            
+mixin team(image,name,pos,text)
+    .carousel-item
+        .col-md-6.col-ms-12
+            img(src=image , alt=name, class="img-responsive")
+        .col-md-6.col-ms-12
+            h2.name= name
+                strong= pos
+
+            != text
