@@ -2,22 +2,25 @@
     
     $(document).ready(function(){
         
-        var $window     = $(window),
-            $homeSlider = $('.slides'),
-            $hero       = $("section.hero"),
-            $logo       = $('.logo-container'),
-            $menu       = $('.menu-container'),
-            $menuBtn    = $('.menu-toggle'),
-            $menuMobile = $('.menu-container.mobile'),
-            $search     = $('.search-container'),
-            $searchBtn  = $('.search-toggle'),
-            $scrollBtn  = $(".scroll-top"),
-            $map        = $("#map-coords"),
-            $mapArea    = $("#map-coords area"),
-            $mapInfo    = $(".map-info"),
-            $carousel   = $("#carousel"),
-            $carouselN  = $("#carousel-next")
-            SSConfig    = {
+        var $window         = $(window),
+            $homeSlider     = $('.slides'),
+            $hero           = $("section.hero"),
+            $logo           = $('.logo-container'),
+            $menu           = $('.menu-container'),
+            $menuBtn        = $('.menu-toggle'),
+            $menuMobile     = $('.menu-container.mobile'),
+            $search         = $('.search-container'),
+            $searchBtn      = $('.search-toggle'),
+            $scrollBtn      = $(".scroll-top"),
+            $map            = $("#map-coords"),
+            $mapArea        = $("#map-coords area"),
+            $mapInfo        = $(".map-info"),
+            $carousel       = $("#carousel"),
+            $carouselN      = $("#carousel-next"),
+            $googleMap      = $("#googleMap"),
+            $contactForm    = $(".contact-form form"),
+            $contactInput   = $contactForm.find("[id*='contact']"),
+            SSConfig        = {
                 hashchange: false,
                 slide_speed: 5000,
                 pagination: false,
@@ -156,6 +159,63 @@
             });
             
         }
+        
+        function googlemaps()
+        {   
+            var coords = [
+                { title: "GCEM" , phone: "91592277" , lat: -23.300162 , lng: -51.174212 }
+            ];
+
+            var map = new google.maps.Map(document.getElementById('googleMap'),{
+              center: {lat: -23.300162 , lng: -51.174212},
+              zoom: 18
+            });
+
+            for(var i = 0; i < coords.length; i++ )
+            {
+
+                var infoWindow = new google.maps.InfoWindow(),
+                    position   = new google.maps.LatLng(coords[i].lat, coords[i].lng),
+                    marker     = new google.maps.Marker({
+                        position: position,
+                        map: map,
+                        title: 'Comunidade da Graça de Londrina',
+                        icon : {
+                            url: 'assets/images/marker.png',
+                            origin: new google.maps.Point(0,0),
+                            anchor: new google.maps.Point(27,42)    // 27 for Px from the X axis (tip of pointer) and 42 For Px from the Y axis (Height)
+                        }
+                    });
+
+                google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                    return function() {
+                        infoWindow.setContent("<div class='marker'><div class='marker-title'>"+coords[i].title+"</div><div class='marker-phone'><h3>Telefone: </h3><span>"+coords[i].phone+"</span></div></div>");
+                        infoWindow.open(map, marker);
+                    }
+                })(marker, i));
+
+            }
+
+        }
+        
+        function verifyForm()
+        {
+        }
+        
+        function formInputAction(input)
+        {
+            $(input)
+                .on("focus", function(){ 
+            
+                    $(this).parent().find("label").css({ 'top': '-5px' });
+                
+                })
+                .on("blur", function(){
+                
+                    $(this).parent().find("label").css({ 'top': '26px' });
+                
+                });
+        }
 
         $(window).scroll(function(){
     
@@ -191,6 +251,17 @@
             
             var owl = $carousel.data('owlCarousel');
             $carouselN.on("click", function(){ owl.next()  });
+        }
+        
+        if( $googleMap.length )
+        {
+            google.maps.event.addDomListener(window, 'load', googlemaps);
+        }
+        
+        if( $contactForm.length )
+        {
+            $contactForm.on("submit", verifyForm() )
+            $.each( $contactInput, function(){ formInputAction(this) });
         }
         
         $.scrollSpeed(100, 800);
