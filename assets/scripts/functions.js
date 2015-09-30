@@ -163,12 +163,13 @@
         function googlemaps()
         {   
             var coords = [
-                { title: "GCEM" , phone: "91592277" , lat: -23.300162 , lng: -51.174212 }
+                { title: "Metacon Engenharia" , phone: "43 3377.1600" , lat: -23.3178821, lng: -51.1645811 }
             ];
 
             var map = new google.maps.Map(document.getElementById('googleMap'),{
-              center: {lat: -23.300162 , lng: -51.174212},
-              zoom: 18
+                center: { lat: -23.3178821, lng: -51.1645811 },
+                scrollwheel: false,
+                zoom: 18
             });
 
             for(var i = 0; i < coords.length; i++ )
@@ -183,7 +184,7 @@
                         icon : {
                             url: 'assets/images/marker.png',
                             origin: new google.maps.Point(0,0),
-                            anchor: new google.maps.Point(27,42)    // 27 for Px from the X axis (tip of pointer) and 42 For Px from the Y axis (Height)
+                            anchor: new google.maps.Point(40,68)    // 27 for Px from the X axis (tip of pointer) and 42 For Px from the Y axis (Height)
                         }
                     });
 
