@@ -154,23 +154,12 @@ html
                         h1.title.thin Nosso Time
                         hr.small.blue
                         
-                .row
-                    .carousel-item
-                        .col-md-6.col-ms-12
-                            img(src="assets/images/team/01.jpg", alt="", class="img-responsive")
-                        .col-md-6.col-ms-12
-                            h2.name RENATO FOGAÇA
-                                strong CEO
-                                
-                            a.next.glyphicon.glyphicon-chevron-right
-                                
-                            p.text Bacharel no curso de Direito pela Universidade Estadual de Londrina e membro da Ordem dos Advogados do Brasil – PR, Renato fundou a Metacon Engenharia em 1991.
-
-                            p.text Nesses anos, desenvolveu mais de 70 empreendimentos imobiliários, realizando o planejamento, desenvolvimento, construção, estruturação e comercialização de empreendimentos em diversos estados da União. 
-
-                            p.text Em 2007, Renato colocou a Metacom em destaque, com o maior número de projetos hoteleiros no Brasil. Esse feito lhe rendeu um convite da AIG Global Real State, para realizar o desenvolvimento de grandes projetos hoteleiros no Brasil. 
-
-                            p.text Sob a direção de Renato Fogaça, o Grupo Metacon Engenharia. conquistou muito nesses últimos anos. Em 2007 já ocupava a 81ª posição no Ranking ITC e, hoje, ocupa a 58ª posição nesta lista que elenca as 100 maiores construtoras do Brasil.
+                .row.relative
+                    a.next.glyphicon.glyphicon-chevron-right.hidden-sm.hidden-xs#carousel-next
+                    #carousel
+                        +team("assets/images/team/01.jpg","RENATO FOGAÇA","CEO","<p>Bacharel no curso de Direito pela Universidade Estadual de Londrina e membro da Ordem dos Advogados do Brasil – PR, Renato fundou a Metacon Engenharia em 1991.</p><p>Nesses anos, desenvolveu mais de 70 empreendimentos imobiliários, realizando o planejamento, desenvolvimento, construção, estruturação e comercialização de empreendimentos em diversos estados da União.</p><p>Em 2007, Renato colocou a Metacom em destaque, com o maior número de projetos hoteleiros no Brasil. Esse feito lhe rendeu um convite da AIG Global Real State, para realizar o desenvolvimento de grandes projetos hoteleiros no Brasil.</p><p>Sob a direção de Renato Fogaça, o Grupo Metacon Engenharia. conquistou muito nesses últimos anos. Em 2007 já ocupava a 81ª posição no Ranking ITC e, hoje, ocupa a 58ª posição nesta lista que elenca as 100 maiores construtoras do Brasil.</p>")
+                        +team("assets/images/team/01.jpg","RENATO FOGAÇA","CEO","<p>Bacharel no curso de Direito pela Universidade Estadual de Londrina e membro da Ordem dos Advogados do Brasil – PR, Renato fundou a Metacon Engenharia em 1991.</p><p>Nesses anos, desenvolveu mais de 70 empreendimentos imobiliários, realizando o planejamento, desenvolvimento, construção, estruturação e comercialização de empreendimentos em diversos estados da União.</p><p>Em 2007, Renato colocou a Metacom em destaque, com o maior número de projetos hoteleiros no Brasil. Esse feito lhe rendeu um convite da AIG Global Real State, para realizar o desenvolvimento de grandes projetos hoteleiros no Brasil.</p><p>Sob a direção de Renato Fogaça, o Grupo Metacon Engenharia. conquistou muito nesses últimos anos. Em 2007 já ocupava a 81ª posição no Ranking ITC e, hoje, ocupa a 58ª posição nesta lista que elenca as 100 maiores construtoras do Brasil.</p>")
+                        +team("assets/images/team/01.jpg","RENATO FOGAÇA","CEO","<p>Bacharel no curso de Direito pela Universidade Estadual de Londrina e membro da Ordem dos Advogados do Brasil – PR, Renato fundou a Metacon Engenharia em 1991.</p><p>Nesses anos, desenvolveu mais de 70 empreendimentos imobiliários, realizando o planejamento, desenvolvimento, construção, estruturação e comercialização de empreendimentos em diversos estados da União.</p><p>Em 2007, Renato colocou a Metacom em destaque, com o maior número de projetos hoteleiros no Brasil. Esse feito lhe rendeu um convite da AIG Global Real State, para realizar o desenvolvimento de grandes projetos hoteleiros no Brasil.</p><p>Sob a direção de Renato Fogaça, o Grupo Metacon Engenharia. conquistou muito nesses últimos anos. Em 2007 já ocupava a 81ª posição no Ranking ITC e, hoje, ocupa a 58ª posição nesta lista que elenca as 100 maiores construtoras do Brasil.</p>")
                     
                         
         section.aqua
@@ -185,58 +174,7 @@ html
                             li: a: i.fa.fa-twitter
                             li: a: i.fa.fa-facebook
                             
-        section.dark
-            .container
-                .row.text-center.footer-container
-                    .col-md-4.col-sm-12
-                        h2.uppercase últimos projetos
-                        ul
-                            li
-                                span Planet Shopping
-                                small Londrina, PR
-
-                            li
-                                span Creche Levínia Monteiro de Moraes
-                                small Londrina, PR
-
-                            li
-                                span Hotel Campinas 
-                                small Campinas, SP
-
-                            li
-                                span Hotel Lages 
-                                small Lages, SC
-                                
-                    
-                    .col-md-4.col-sm-12
-                        h2.uppercase contato
-                        ul
-                            li
-                                span
-                                    i.fa.fa-map-marker
-                                    ='Rua Anita Garibaldi, 25 | Centro CEP: 86020-500 '
-                                small Londrina - PR
-                            li
-                                span
-                                    i.fa.fa-envelope-o
-                                    ='email@metacon.com.br'
-                            li
-                                span
-                                    i.fa.fa-phone
-                                    ='43 3377.1600'
-                                
-                    .col-md-4.col-sm-12
-                        h2.uppercase cadastre-se
-                        p.text-left Receba primeiro as novidades e lançamentos da METACON
-                        form(action="" method="post" accept-charset="UTF-8").newsletter
-                            input(type="text" placeholder="E-Mail")
-                            button.btn.btn-info.pull-right Enviar
-                        
-                    
-        footer
-            .container
-                span Todos Direitos Reservados 2015
-                a(href="https://www.agenciadzoe.com.br").developer: img(src="https://www.agenciadzoe.com.br/images/logo.png" alt="Agência dZoë" height="30")
+        +footer()
             
         .scroll-top
             a

@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/favicon.ico">
   </head>
   <body>
-    <header data-scroll-index="0">
+    <header class="dark-nav">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
@@ -57,62 +57,80 @@
         </div>
       </div>
     </header>
-    <div class="slides">
-      <ul class="slides-container">
-        <li><img src="assets/images/slider/1.jpg" alt="">
-          <div class="container">
-            <div class="row">
-              <div class="col-xs-12">
-                <h2> Lorem ipsum dolor sit amet</h2><span> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae repudiandae possimus, ea, quasi natus beatae assumenda aut necessitatibus blanditiis corporis iusto doloribus quod at adipisci atque</span><br>
-                <button class="btn btn-lead">Nossas Obras</button>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li><img src="assets/images/slider/4.jpg" alt="">
-          <div class="container">
-            <div class="row">
-              <div class="col-xs-12">
-                <h2> Lorem ipsum dolor sit amet</h2><span> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae repudiandae possimus, ea, quasi natus beatae assumenda aut necessitatibus blanditiis corporis iusto doloribus quod at adipisci atque</span><br>
-                <button class="btn btn-lead inverted">Nossas Obras</button>
-              </div>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <nav class="slides-navigation hidden"><a class="next"><i class="glyphicon glyphicon-chevron-right"></i></a><a class="prev"><i class="glyphicon glyphicon-chevron-left"></i></a></nav>
-    <section data-scroll-index="1" class="default">
+    <section class="hero contact"> </section>
+    <section class="default map-wrap">             
+      <div id="googleMap"></div>
+    </section>
+    <section class="default contents-contact">             
       <div class="container">
         <div class="row">
-          <div class="col-xs-12 text-center">
-            <h1 class="title handwriting">Porque escolher a Metacon ?</h1>
-            <hr class="small blue">
-            <p class="subtitle"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae corporis, vero veritatis suscipit nesciunt laborum, quia sint expedita adipisci.</p>
-            <p class="description"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim nemo minima maiores aspernatur facilis nisi temporibus quo architecto aliquid, repudiandae nam molestiae provident, rerum. Neque, mollitia velit ea debitis autem!</p>
+          <div class="col-md-12">
+            <h4 class="title handwriting blue">Entre em contato para que juntos possamos realizar sonhos!</h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-8">
+            <div class="contact-form">
+              <form action="" method="post">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="text" id="contactName">
+                      <label for="name">Nome</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="text" id="contactPhone">
+                      <label for="name">Telefone</label>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <input type="text" id="contactEmail">
+                      <label for="">E-Mail</label>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <input type="text" id="contactSubject">
+                      <label for="">Assunto</label>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <textarea type="text" id="contactMessage"></textarea>
+                      <label for="">Mensagem</label>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <button type="submit">enviar</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="contact-info"> 
+              <h3 class="subtitle uppercase">Dados para contato</h3>
+              <p>
+                 
+                Rua Anita Garibaldi, 25 | Centro CEP: 86020-500 | Londrina - PR
+              </p>
+              <p>
+                 
+                contato@metacon.com.br
+              </p>
+              <p>
+                 
+                43 3377.1600
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </section>
-    <section data-scroll-index="2" class="blue">
-      <div class="container">
-        <div class="row text-center">
-          <div class="col-md-3 col-sm-6 col-xs-12 sm-height-padding scale"><img src="assets/images/icons/icon-section-01.png" alt="" class="icon">
-            <h2 class="showoff thin">200</h2><span class="subtitle">obras entregues</span>
-          </div>
-          <div class="col-md-3 col-sm-6 col-xs-12 sm-height-padding scale"><img src="assets/images/icons/icon-section-02.png" alt="" class="icon">
-            <h2 class="showoff thin">21</h2><span class="subtitle">obras em andamento</span>
-          </div>
-          <div class="col-md-3 col-sm-6 col-xs-12 sm-height-padding scale"><img src="assets/images/icons/icon-section-03.png" alt="" class="icon">
-            <h2 class="showoff thin">50</h2><span class="subtitle">cidades atendidas</span>
-          </div>
-          <div class="col-md-3 col-sm-6 col-xs-12 sm-height-padding scale"><img src="assets/images/icons/icon-section-04.png" alt="" class="icon">
-            <h2 class="showoff thin">50000</h2><span class="subtitle">m² contruidos</span>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section data-scroll-index="6" class="aqua">
+    <section class="aqua">
       <div class="container">
         <div class="row text-center">
           <div class="col-md-12 social-container"><span class="subtitle">Conecte-se com a gente:</span>
@@ -173,9 +191,10 @@
     <script type="text/javascript" src="assets/scripts/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="assets/scripts/jquery.easing.1.3.js"></script>
     <script type="text/javascript" src="assets/scripts/jquery.animate-enhanced.min.js"></script>
-    <script type="text/javascript" src="assets/scripts/jquery.superslides.min.js"></script>
-    <script type="text/javascript" src="assets/scripts/scrollIt.min.js">       </script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+    <script type="text/javascript" src="assets/scripts/scrollIt.min.js"></script>
     <script type="text/javascript" src="assets/scripts/jquery.scrollSpeed.js"></script>
+    <script type="text/javascript" src="assets/scripts/owl.carousel.min.js"></script>
     <script type="text/javascript" src="assets/scripts/functions.js"></script>
   </body>
 </html>

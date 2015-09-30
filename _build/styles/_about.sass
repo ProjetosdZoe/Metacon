@@ -231,32 +231,32 @@ section.hero.about
             text-align: left
             font: 
                 size: 14px
+        
+    a.next
+        position: absolute
+        right: -50px
+        top: 50%
+        display: block
+        color: $blue-light
+        text-decoration: none
+        transition: all 0.3s ease-in-out
+        cursor: pointer
+        font:
+            size: 80px
+            weight: 300
+
+        &:active, &:link, &:visited
+            text-decoration: none
+            color: $blue-light
+
+        &:hover
+            color: $blue-dark
                 
                 
     .carousel-item
         width: 100%
         height: auto
         position: relative
-        
-        a.next
-            position: absolute
-            right: -50px
-            top: 50%
-            display: block
-            color: $blue-light
-            text-decoration: none
-            transition: all 0.3s ease-in-out
-            cursor: pointer
-            font:
-                size: 80px
-                weight: 300
-                
-            &:active, &:link, &:visited
-                text-decoration: none
-                color: $blue-light
-            
-            &:hover
-                color: $blue-dark
         
         h2.name
             font-weight: 300

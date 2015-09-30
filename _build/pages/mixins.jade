@@ -12,3 +12,74 @@ mixin nav(mobile)
             
         .nav-toggle.visible-md.visible-sm.visible-xs.menu-toggle
             i.glyphicon.glyphicon-remove.remove
+            
+            
+mixin team(image,name,pos,text)
+    .carousel-item
+        .col-md-6.col-ms-12
+            img(src=image , alt=name, class="img-responsive")
+        .col-md-6.col-ms-12
+            h2.name= name
+                strong= pos
+
+            != text
+            
+mixin footer()
+    section.dark
+        .container
+            .row.text-center.footer-container
+                .col-md-4.col-sm-12
+                    h2.uppercase nossos serviços
+                    ul
+                        li
+                            span 
+                                i.fa.fa-user
+                                p
+                                    | Parceria com investidores
+                        li
+                            span 
+                                i.fa.fa-user
+                                p
+                                    | Incorporação
+                        li
+                            span 
+                                i.fa.fa-user
+                                p
+                                    | Execução e acompanhamento de obra
+
+
+                .col-md-4.col-sm-12
+                    h2.uppercase contato
+                    ul
+                        li
+                            span
+                                i.fa.fa-map-marker
+                                p.text-center
+                                    | Rua Anita Garibaldi, 25 | Centro CEP: 86020-500 | Londrina - PR
+                        li
+                            span
+                                i.fa.fa-envelope-o
+                                p.text-center
+                                    | email@metacon.com.br
+                        li
+                            span
+                                i.fa.fa-phone                                
+                                p.text-center
+                                    | 43 3377.1600
+
+                .col-md-4.col-sm-12
+                    h2.uppercase plantão
+                    ul
+                        li
+                            span.subtitle.blue Pioneiros Boulevard:
+                            p Avenida dos pioneiros, 2665- Londrina
+                        li
+                            span.subtitle.blue Top Life Ortigueira: 
+                            p Avenida Laurindo Barbosa de Macedo, esquina com a Rua Goiás -Ortigueira
+
+
+
+    footer
+        .container
+            span Todos Direitos Reservados 2015
+            a(href="https://www.agenciadzoe.com.br").developer: img(src="https://www.agenciadzoe.com.br/images/logo.png" alt="Agência dZoë" height="30")
