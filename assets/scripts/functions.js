@@ -204,6 +204,7 @@
         
         function verifyForm()
         {
+            
         }
         
         function formInputAction(input)
@@ -251,10 +252,14 @@
         
         function togglePortfolioTitle(item,flag)
         {
-            if(flag == 1){
-                $(item).find("figure span").css({ 'right' : '0%' });}
-            else{
-                $(item).find("figure span").css({ 'right' : '-100%' });}
+            if(flag == 1)
+            {
+                $(item).find("figure span").css({ 'right' : '0%' });
+            }
+            else
+            {
+                $(item).find("figure span").css({ 'right' : '-100%' });
+            }
         }
 
         $(window).scroll(function(){
@@ -316,7 +321,12 @@
                 .on("mouseleave", function(){ togglePortfolioTitle( this , 2); });
         }
         
-        $.scrollSpeed(100, 800);
+        if( navigator.userAgent.indexOf("Windows") != -1 || navigator.userAgent.indexOf("Linux") != -1)
+        {
+            $.scrollSpeed(100, 800);
+        }
+        
+        
         $.scrollIt();
         
         searchToggle();
