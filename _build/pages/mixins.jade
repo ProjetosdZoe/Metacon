@@ -24,6 +24,14 @@ mixin team(image,name,pos,text)
 
             != text
             
+mixin portfolioItem(type,image,title,link)
+    .col-lg-3.col-md-4.col-sm-6.col-xs-12.portfolio-item(data-type=type)
+        a(href=link)
+            figure
+                img(src=image)
+                span 
+                    h2!=title
+            
 mixin footer()
     section.dark
         .container

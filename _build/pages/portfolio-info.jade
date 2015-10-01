@@ -15,7 +15,7 @@ html
         link(rel="shortcut icon" href="/favicon.ico")
     body
             
-        header.dark-nav
+        header
             .container
                 .row
                     .col-md-12
@@ -37,52 +37,30 @@ html
                     .menu-container.mobile
                         +nav("mobile")
                 
-        section.hero.contact 
+        section.hero.portfolio-info
+            h2.title nome da obra
+            hr.small.blue
+            span.subtitle londrina - pr
             
-        section.default.map-wrap              
-            #googleMap
+        section.aqua.contents-portfolio-info
+            .container
+                .row.text-center
+                    .col-md-12
+                        ul.portfolio-nav
+                            li: a Ficha Técnica
+                            span
+                            li: a localização
+                            span
+                            li: a Imagens
+                            span
+                            li: a Planta
             
-        section.default.contents-contact              
+        section.default.contents-portfolio-info
             .container
                 .row
-                    .col-md-12.text-center
-                        h4.title.handwriting.blue Entre em contato para que juntos possamos realizar sonhos!
-                .row
-                    .col-md-8
-                        .contact-form
-                            form(action="",method="post")
-                                .row
-                                    .col-md-6
-                                        .form-group
-                                            input(type="text",id="contactName")
-                                            label(for="name") Nome
-                                    .col-md-6
-                                        .form-group
-                                            input(type="text",id="contactPhone")
-                                            label(for="name") Telefone
-                                    .col-md-12
-                                        .form-group
-                                            input(type="text",id="contactEmail")
-                                            label(for="") E-Mail
-                                    .col-md-12
-                                        .form-group
-                                            input(type="text",id="contactSubject")
-                                            label(for="") Assunto
-                                    .col-md-12
-                                        .form-group
-                                            textarea(type="text",id="contactMessage")
-                                            label(for="") Mensagem
-                                    .col-md-12
-                                        button(type="submit") enviar
-                    .col-md-4
-                        .contact-info 
-                            h3.subtitle.uppercase Dados para contato
-                            p 
-                                | Rua Anita Garibaldi, 25 | Centro CEP: 86020-500 | Londrina - PR
-                            p 
-                                | contato@metacon.com.br
-                            p 
-                                | 43 3377.1600
+                    .col-md-12
+                        p
+                            | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae ab alias, animi libero aliquid nemo eveniet repellat. Explicabo ratione.
                         
         section.aqua
             .container

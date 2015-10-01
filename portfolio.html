@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/favicon.ico">
   </head>
   <body>
-    <header class="dark-nav">
+    <header>
       <div class="container">
         <div class="row">
           <div class="col-md-12">
@@ -57,76 +57,48 @@
         </div>
       </div>
     </header>
-    <section class="hero contact"> </section>
-    <section class="default map-wrap">             
-      <div id="googleMap"></div>
+    <section class="hero portfolio">
+      <h2 class="title">Portfólio</h2>
+      <hr class="small blue">
     </section>
-    <section class="default contents-contact">             
+    <section class="default contents-portfolio">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 text-center">
-            <h4 class="title handwriting blue">Entre em contato para que juntos possamos realizar sonhos!</h4>
+          <div class="col-md-12">
+            <ul class="portfolio-filter">
+              <li data-filter="0" class="active"><span>Todos</span></li>
+              <li data-filter="1"><span>Filtro 01</span></li>
+              <li data-filter="2"><span>Filtro 02</span></li>
+              <li data-filter="3"><span>Filtro 03</span></li>
+              <li data-filter="4"><span>Filtro 04</span></li>
+            </ul>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-8">
-            <div class="contact-form">
-              <form action="" method="post">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <input type="text" id="contactName">
-                      <label for="name">Nome</label>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <input type="text" id="contactPhone">
-                      <label for="name">Telefone</label>
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <input type="text" id="contactEmail">
-                      <label for="">E-Mail</label>
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <input type="text" id="contactSubject">
-                      <label for="">Assunto</label>
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <textarea type="text" id="contactMessage"></textarea>
-                      <label for="">Mensagem</label>
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <button type="submit">enviar</button>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="contact-info"> 
-              <h3 class="subtitle uppercase">Dados para contato</h3>
-              <p>
-                 
-                Rua Anita Garibaldi, 25 | Centro CEP: 86020-500 | Londrina - PR
-              </p>
-              <p>
-                 
-                contato@metacon.com.br
-              </p>
-              <p>
-                 
-                43 3377.1600
-              </p>
-            </div>
-          </div>
+          <div data-type='1' class="col-lg-3 col-md-4 col-sm-6 col-xs-12 portfolio-item"><a href="portfolio-info.html">
+              <figure><img src="assets/images/portfolio/01.jpg"/><span> 
+                  <h2>nome da obra 01</h2></span></figure></a></div>
+          <div data-type='1' class="col-lg-3 col-md-4 col-sm-6 col-xs-12 portfolio-item"><a href="portfolio-info.html">
+              <figure><img src="assets/images/portfolio/02.jpg"/><span> 
+                  <h2>nome da obra 02</h2></span></figure></a></div>
+          <div data-type='3' class="col-lg-3 col-md-4 col-sm-6 col-xs-12 portfolio-item"><a href="portfolio-info.html">
+              <figure><img src="assets/images/portfolio/03.jpg"/><span> 
+                  <h2>nome da obra 03</h2></span></figure></a></div>
+          <div data-type='3' class="col-lg-3 col-md-4 col-sm-6 col-xs-12 portfolio-item"><a href="portfolio-info.html">
+              <figure><img src="assets/images/portfolio/04.jpg"/><span> 
+                  <h2>nome da obra 04</h2></span></figure></a></div>
+          <div data-type='2' class="col-lg-3 col-md-4 col-sm-6 col-xs-12 portfolio-item"><a href="portfolio-info.html">
+              <figure><img src="assets/images/portfolio/05.jpg"/><span> 
+                  <h2>nome da obra 05</h2></span></figure></a></div>
+          <div data-type='1' class="col-lg-3 col-md-4 col-sm-6 col-xs-12 portfolio-item"><a href="portfolio-info.html">
+              <figure><img src="assets/images/portfolio/06.jpg"/><span> 
+                  <h2>nome da obra 06</h2></span></figure></a></div>
+          <div data-type='1' class="col-lg-3 col-md-4 col-sm-6 col-xs-12 portfolio-item"><a href="portfolio-info.html">
+              <figure><img src="assets/images/portfolio/07.jpg"/><span> 
+                  <h2>nome da obra 07</h2></span></figure></a></div>
+          <div data-type='1' class="col-lg-3 col-md-4 col-sm-6 col-xs-12 portfolio-item"><a href="portfolio-info.html">
+              <figure><img src="assets/images/portfolio/08.jpg"/><span> 
+                  <h2>nome da obra 08</h2></span></figure></a></div>
         </div>
       </div>
     </section>
