@@ -26,7 +26,7 @@ section.hero.portfolio-info
         li
             padding: 10px 20px
             text-align: center
-            
+            cursor: pointer
             a
                 font: 
                     size: responsive 18px 30px
@@ -37,3 +37,65 @@ section.hero.portfolio-info
                 
         @media(max-width: 640px)
             flex-direction: column
+            
+    .portfolio-panes
+        width: 100%
+        overflow: hidden
+        
+        .pane
+            display: none
+            opacity: 0
+            width: 100%
+            transition: all 0.3s ease-in-out
+            
+            figure
+                padding: 16px
+                width: 100%
+                height: 100%
+                display: flex
+                align-items: center
+                justify-content: center
+            
+            .text-infos
+                display: flex
+                align-items: center
+                justify-content: center
+                flex-direction: column
+
+                h2.block-title
+                    display: block
+                    padding: 5px 10px
+                    margin: 0
+                    background-color: $blue-light
+                    color: $white-light
+                    font:
+                        size: 24px
+                        weight: 500
+                        
+                span
+                    display: block
+                    margin: 20px 0
+                    font:
+                        size: 18px
+                        weight: 700
+                    color: $black-dark
+                    
+                ul
+                    list-style: none
+                    margin: 20px 0
+                    padding: 0
+                    
+                    li
+                        font:
+                            size: 16px
+                            weight: 700
+                        padding: 6px 0
+                        
+                        &:before
+                            content: ""                      
+                            background:
+                                image: url('../images/bullet.png')
+                                repeat: no-repeat
+                                position: 0px center
+                            padding-left: 35px
+                        
