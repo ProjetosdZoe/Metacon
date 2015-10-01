@@ -15,7 +15,7 @@ html
         link(rel="shortcut icon" href="/favicon.ico")
     body
             
-        header.dark-nav
+        header
             .container
                 .row
                     .col-md-12
@@ -37,52 +37,35 @@ html
                     .menu-container.mobile
                         +nav("mobile")
                 
-        section.hero.contact 
+        section.hero.portfolio
+            h2.title Portfólio
+            hr.small.blue
             
-        section.default.map-wrap              
-            #googleMap
-            
-        section.default.contents-contact              
+        section.default.contents-portfolio
             .container
                 .row
-                    .col-md-12.text-center
-                        h4.title.handwriting.blue Entre em contato para que juntos possamos realizar sonhos!
+                    .col-md-12
+                        ul.portfolio-filter
+                            li(data-filter="0").active
+                                span Todos
+                            li(data-filter="1")
+                                span Filtro 01
+                            li(data-filter="2")
+                                span Filtro 02
+                            li(data-filter="3")
+                                span Filtro 03
+                            li(data-filter="4")
+                                span Filtro 04
+                                
                 .row
-                    .col-md-8
-                        .contact-form
-                            form(action="",method="post")
-                                .row
-                                    .col-md-6
-                                        .form-group
-                                            input(type="text",id="contactName")
-                                            label(for="name") Nome
-                                    .col-md-6
-                                        .form-group
-                                            input(type="text",id="contactPhone")
-                                            label(for="name") Telefone
-                                    .col-md-12
-                                        .form-group
-                                            input(type="text",id="contactEmail")
-                                            label(for="") E-Mail
-                                    .col-md-12
-                                        .form-group
-                                            input(type="text",id="contactSubject")
-                                            label(for="") Assunto
-                                    .col-md-12
-                                        .form-group
-                                            textarea(type="text",id="contactMessage")
-                                            label(for="") Mensagem
-                                    .col-md-12
-                                        button(type="submit") enviar
-                    .col-md-4
-                        .contact-info 
-                            h3.subtitle.uppercase Dados para contato
-                            p 
-                                | Rua Anita Garibaldi, 25 | Centro CEP: 86020-500 | Londrina - PR
-                            p 
-                                | contato@metacon.com.br
-                            p 
-                                | 43 3377.1600
+                    +portfolioItem( 1, 'assets/images/portfolio/01.jpg', 'nome da obra 01', 'portfolio-info.html')
+                    +portfolioItem( 1, 'assets/images/portfolio/02.jpg', 'nome da obra 02', 'portfolio-info.html')
+                    +portfolioItem( 3, 'assets/images/portfolio/03.jpg', 'nome da obra 03', 'portfolio-info.html')
+                    +portfolioItem( 3, 'assets/images/portfolio/04.jpg', 'nome da obra 04', 'portfolio-info.html')
+                    +portfolioItem( 2, 'assets/images/portfolio/05.jpg', 'nome da obra 05', 'portfolio-info.html')
+                    +portfolioItem( 1, 'assets/images/portfolio/06.jpg', 'nome da obra 06', 'portfolio-info.html')
+                    +portfolioItem( 1, 'assets/images/portfolio/07.jpg', 'nome da obra 07', 'portfolio-info.html')
+                    +portfolioItem( 1, 'assets/images/portfolio/08.jpg', 'nome da obra 08', 'portfolio-info.html')
                         
         section.aqua
             .container

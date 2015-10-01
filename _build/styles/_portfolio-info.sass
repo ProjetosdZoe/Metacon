@@ -1,0 +1,39 @@
+section.hero.portfolio-info
+    background: 
+        image: url(../images/hero-section/portfolio-info.jpg)
+        
+.contents-portfolio-info
+    
+    ul.portfolio-nav
+        list-style: none
+        display: flex
+        align-items: center
+        justify-content: space-between
+        flex-direction: row
+        padding: 0
+        margin: 0
+        
+        span
+            display: block
+            width: 2px
+            background-color: $white-light
+            height: 100%
+            padding: 25px 1px
+                
+            @media(max-width: 640px)
+                padding: 1px 25px
+        
+        li
+            padding: 10px 20px
+            text-align: center
+            
+            a
+                font: 
+                    size: responsive 18px 30px
+                    weight: 500
+                color: $white-light
+                text-decoration: none
+                text-transform: uppercase
+                
+        @media(max-width: 640px)
+            flex-direction: column

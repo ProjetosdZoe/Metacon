@@ -2,25 +2,28 @@
     
     $(document).ready(function(){
         
-        var $window         = $(window),
-            $homeSlider     = $('.slides'),
-            $hero           = $("section.hero"),
-            $logo           = $('.logo-container'),
-            $menu           = $('.menu-container'),
-            $menuBtn        = $('.menu-toggle'),
-            $menuMobile     = $('.menu-container.mobile'),
-            $search         = $('.search-container'),
-            $searchBtn      = $('.search-toggle'),
-            $scrollBtn      = $(".scroll-top"),
-            $map            = $("#map-coords"),
-            $mapArea        = $("#map-coords area"),
-            $mapInfo        = $(".map-info"),
-            $carousel       = $("#carousel"),
-            $carouselN      = $("#carousel-next"),
-            $googleMap      = $("#googleMap"),
-            $contactForm    = $(".contact-form form"),
-            $contactInput   = $contactForm.find("[id*='contact']"),
-            SSConfig        = {
+        var $window           = $(window),
+            $homeSlider       = $('.slides'),
+            $hero             = $("section.hero"),
+            $logo             = $('.logo-container'),
+            $menu             = $('.menu-container'),
+            $menuBtn          = $('.menu-toggle'),
+            $menuMobile       = $('.menu-container.mobile'),
+            $search           = $('.search-container'),
+            $searchBtn        = $('.search-toggle'),
+            $scrollBtn        = $(".scroll-top"),
+            $map              = $("#map-coords"),
+            $mapArea          = $("#map-coords area"),
+            $mapInfo          = $(".map-info"),
+            $carousel         = $("#carousel"),
+            $carouselN        = $("#carousel-next"),
+            $googleMap        = $("#googleMap"),
+            $contactForm      = $(".contact-form form"),
+            $contactInput     = $contactForm.find("[id*='contact']"),
+            $portfolioFilter  = $(".portfolio-filter"),
+            $portfolioItem    = $(".portfolio-item"),
+            $portFilterItem   = $portfolioFilter.find("li"),
+            SSConfig          = {
                 hashchange: false,
                 slide_speed: 5000,
                 pagination: false,
@@ -217,6 +220,42 @@
                 
                 });
         }
+        
+        function togglePortfolioFilterItem($this)
+        {
+            $portFilterItem.removeClass("active");
+            $($this).addClass("active");
+        }
+        
+        function filterPortfolioItems(id)
+        {
+            
+            $portfolioItem.each(function(){
+                $(this).show();
+                
+                if( id == 0  )
+                {
+                    $(this).show();
+                }
+                else
+                {                  
+                    if( $(this).data("type") != id )
+                    {
+                        $(this).hide();
+                    }
+                }
+                
+            });
+            
+        }
+        
+        function togglePortfolioTitle(item,flag)
+        {
+            if(flag == 1){
+                $(item).find("figure span").css({ 'right' : '0%' });}
+            else{
+                $(item).find("figure span").css({ 'right' : '-100%' });}
+        }
 
         $(window).scroll(function(){
     
@@ -263,6 +302,18 @@
         {
             $contactForm.on("submit", verifyForm() )
             $.each( $contactInput, function(){ formInputAction(this) });
+        }
+        
+        if( $portfolioFilter.length )
+        {
+            $portFilterItem.on("click", function(){ togglePortfolioFilterItem( this ); filterPortfolioItems( $(this).data("filter") ) });
+        }
+        
+        if( $portfolioItem.length )
+        {
+            $portfolioItem
+                .on("mouseenter", function(){ togglePortfolioTitle( this , 1); })
+                .on("mouseleave", function(){ togglePortfolioTitle( this , 2); });
         }
         
         $.scrollSpeed(100, 800);
