@@ -23,6 +23,9 @@
             $portfolioFilter  = $(".portfolio-filter"),
             $portfolioItem    = $(".portfolio-item"),
             $portFilterItem   = $portfolioFilter.find("li"),
+            $portfolioNav     = $(".portfolio-nav"),
+            $portfolioNavTab  = $portfolioNav.find("[data-tab]"),
+            $portfolioPanes   = $(".portfolio-panes"),
             SSConfig          = {
                 hashchange: false,
                 slide_speed: 5000,
@@ -261,6 +264,20 @@
                 $(item).find("figure span").css({ 'right' : '-100%' });
             }
         }
+        
+        function togglePortfolioPane(id)
+        {
+            $portfolioPanes.children("[data-pane!='"+id+"']").each(function() { 
+                $(this).css({
+                    'display' : 'none',
+                    'opacity' : '0'
+                });
+            });
+            $portfolioPanes.find(".pane[data-pane='"+id+"']").css({
+                'display' : 'block',
+                'opacity' : '1'
+            });
+        }
 
         $(window).scroll(function(){
     
@@ -319,6 +336,12 @@
             $portfolioItem
                 .on("mouseenter", function(){ togglePortfolioTitle( this , 1); })
                 .on("mouseleave", function(){ togglePortfolioTitle( this , 2); });
+        }
+        
+        if( $portfolioNav.length )
+        {
+            $portfolioNavTab.on("click", function(){ togglePortfolioPane( $(this).data("tab") ) });            
+            $portfolioNavTab.eq(0).trigger("click");
         }
         
         if( navigator.userAgent.indexOf("Windows") != -1 || navigator.userAgent.indexOf("Linux") != -1)

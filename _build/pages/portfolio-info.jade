@@ -47,20 +47,52 @@ html
                 .row.text-center
                     .col-md-12
                         ul.portfolio-nav
-                            li: a Ficha Técnica
+                            li(data-tab="1"): a Ficha Técnica
                             span
-                            li: a localização
+                            li(data-tab="2"): a localização
                             span
-                            li: a Imagens
+                            li(data-tab="3"): a Imagens
                             span
-                            li: a Planta
+                            li(data-tab="4"): a Planta
             
         section.default.contents-portfolio-info
-            .container
-                .row
-                    .col-md-12
-                        p
-                            | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae ab alias, animi libero aliquid nemo eveniet repellat. Explicabo ratione.
+            .row
+                .col-md-12
+                    .portfolio-panes
+                        .pane(data-pane="1")
+                            .container
+                                .row
+                                    .col-md-4
+                                        figure
+                                            img(src="assets/images/portfolio-info/01.jpg", class="img-responsive")
+                                    .col-md-8.text-infos
+                                        h2.block-title DIMENSÃO E COMPOSIÇÃO
+                                        span  Área total : 15.655,31 m2.
+
+                                        h2.block-title TORRE RESIDENCIAL:
+
+                                        ul.info-list
+                                            li Acesso Privativo – Térreo;
+                                            li Pavimento Lazer: Sala de Jogos; Fitness; Salão Gourmet; Piscina; Espaço Kids, Lazer Descoberto.
+                                            li 16 Pavimentos Tipo;
+                                            li 80 Apartamentos de 02 Dormitórios (suíte) compostos por: Sala de Estar / Jantar, Varanda, Dormitório 01 (Suíte), Dormitório 02, Bwc Social, Cozinha, Área de Serviço, com área privativa de 65,00m2, e área total de 120,00m2 cada; com 01 vaga de garagem;
+
+
+                                        h2.block-title TORRE COMERCIAL
+
+                                        ul.info-list
+                                            li Acesso Privativo - Térreo
+                                            li Torre comercial - 10 pavimentos
+                                            li 01 Loja Térrea, com área privativa de 385m2, área total de 605,00m2 e 08 vagas de garagem, e possibilidade de mezanino com 385,00m2
+                                            li 40 Salas | Escritórios, com área privativa média de 50 m2 cada, e área total média de 96,00m2, e 01 vaga de garagem cada;
+                                            li Pavimento de Apoio, com 03 Salas de Reuniões e Área Administrativa.
+
+                        .pane(data-pane="2")
+                            #portfolioMap(data-lat="",data-lng="")
+                        .pane(data-pane="3")
+                            p pane 03
+                        .pane(data-pane="4")
+                            p pane 04
                         
         section.aqua
             .container
