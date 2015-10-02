@@ -50,18 +50,10 @@
             var height = $hero.height();
             if (offset <= height )
             {
-                if ( height < 500 )
-                {                    
-                    $hero.css({
-                        'background-position' : " 50%  -"+ (offset * 8 ) / 12 +"px "
-                    });
-                }
-                else
-                {
-                    $hero.css({
-                        'background-position' : " 50%  -"+ (offset * 8) / 6 +"px "
-                    });
-                }
+                            
+                $hero.css({
+                    'background-position' : " 50% "+ ((offset * 100) / height) * 2 +"%"
+                });
             }
         }
         
