@@ -77,44 +77,54 @@
     </section>
     <section class="default contents-portfolio-info">
       <div class="row">
-        <div class="col-md-12">
-          <div class="portfolio-panes">
-            <div data-pane="1" class="pane">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-4">
-                    <figure><img src="assets/images/portfolio-info/01.jpg" class="img-responsive"></figure>
-                  </div>
-                  <div class="col-md-8 text-infos">
-                    <h2 class="block-title">DIMENSÃO E COMPOSIÇÃO</h2><span> Área total : 15.655,31 m2.</span>
-                    <h2 class="block-title">TORRE RESIDENCIAL:</h2>
-                    <ul class="info-list">
-                      <li>Acesso Privativo – Térreo;</li>
-                      <li>Pavimento Lazer: Sala de Jogos; Fitness; Salão Gourmet; Piscina; Espaço Kids, Lazer Descoberto.</li>
-                      <li>16 Pavimentos Tipo;</li>
-                      <li>80 Apartamentos de 02 Dormitórios (suíte) compostos por: Sala de Estar / Jantar, Varanda, Dormitório 01 (Suíte), Dormitório 02, Bwc Social, Cozinha, Área de Serviço, com área privativa de 65,00m2, e área total de 120,00m2 cada; com 01 vaga de garagem;</li>
-                    </ul>
-                    <h2 class="block-title">TORRE COMERCIAL</h2>
-                    <ul class="info-list">
-                      <li>Acesso Privativo - Térreo</li>
-                      <li>Torre comercial - 10 pavimentos</li>
-                      <li>01 Loja Térrea, com área privativa de 385m2, área total de 605,00m2 e 08 vagas de garagem, e possibilidade de mezanino com 385,00m2</li>
-                      <li>40 Salas | Escritórios, com área privativa média de 50 m2 cada, e área total média de 96,00m2, e 01 vaga de garagem cada;</li>
-                      <li>Pavimento de Apoio, com 03 Salas de Reuniões e Área Administrativa.</li>
-                    </ul>
-                  </div>
+        <div class="portfolio-panes">
+          <div data-pane="1" class="pane">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-4">
+                  <figure><img src="assets/images/portfolio-info/01.jpg" class="img-responsive"></figure>
+                </div>
+                <div class="col-md-8 text-infos">
+                  <h2 class="block-title">DIMENSÃO E COMPOSIÇÃO</h2><span> Área total : 15.655,31 m2.</span>
+                  <h2 class="block-title">TORRE RESIDENCIAL:</h2>
+                  <ul class="info-list">
+                    <li>Acesso Privativo – Térreo;</li>
+                    <li>Pavimento Lazer: Sala de Jogos; Fitness; Salão Gourmet; Piscina; Espaço Kids, Lazer Descoberto.</li>
+                    <li>16 Pavimentos Tipo;</li>
+                    <li>80 Apartamentos de 02 Dormitórios (suíte) compostos por: Sala de Estar / Jantar, Varanda, Dormitório 01 (Suíte), Dormitório 02, Bwc Social, Cozinha, Área de Serviço, com área privativa de 65,00m2, e área total de 120,00m2 cada; com 01 vaga de garagem;</li>
+                  </ul>
+                  <h2 class="block-title">TORRE COMERCIAL</h2>
+                  <ul class="info-list">
+                    <li>Acesso Privativo - Térreo</li>
+                    <li>Torre comercial - 10 pavimentos</li>
+                    <li>01 Loja Térrea, com área privativa de 385m2, área total de 605,00m2 e 08 vagas de garagem, e possibilidade de mezanino com 385,00m2</li>
+                    <li>40 Salas | Escritórios, com área privativa média de 50 m2 cada, e área total média de 96,00m2, e 01 vaga de garagem cada;</li>
+                    <li>Pavimento de Apoio, com 03 Salas de Reuniões e Área Administrativa.</li>
+                  </ul>
                 </div>
               </div>
             </div>
-            <div data-pane="2" class="pane">
-              <div id="portfolioMap" data-lat="" data-lng=""></div>
+          </div>
+          <div data-pane="2" class="pane">
+            <div class="portfolio-mapwrapper">
+              <div id="portfolioMap" data-lat="-23.3178821" data-lng="-51.1645811" data-title="title"></div><span class="overlay">
+                <h2>Av. Jorge Casoni, esquina com a Rua Norman Prochet, Londrina, PR, em um terreno de 2.364,06 m2.</h2></span>
             </div>
-            <div data-pane="3" class="pane">
-              <p>pane 03</p>
+          </div>
+          <div data-pane="3" class="pane">
+            <div class="row relative"><a id="carousel-next" class="next glyphicon glyphicon-chevron-right hidden-sm hidden-xs"></a>
+              <div id="carousel" class="portfolioGallery">
+                <figure style="background-image: url('assets/images/portfolio-info/gallery/01.jpg')">
+                  <h2>ESPAÇO GOURMET</h2><span> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste atque debitis incidunt aliquam velit voluptates.</span>
+                </figure>
+                <figure style="background-image: url('assets/images/portfolio-info/gallery/01.jpg')">
+                  <h2>ESPAÇO GOURMET</h2><span> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste atque debitis incidunt aliquam velit voluptates.</span>
+                </figure>
+              </div>
             </div>
-            <div data-pane="4" class="pane">
-              <p>pane 04</p>
-            </div>
+          </div>
+          <div data-pane="4" class="pane">
+            <p>pane 04</p>
           </div>
         </div>
       </div>
@@ -180,7 +190,7 @@
     <script type="text/javascript" src="assets/scripts/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="assets/scripts/jquery.easing.1.3.js"></script>
     <script type="text/javascript" src="assets/scripts/jquery.animate-enhanced.min.js"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script type="text/javascript" src="assets/scripts/scrollIt.min.js"></script>
     <script type="text/javascript" src="assets/scripts/jquery.scrollSpeed.js"></script>
     <script type="text/javascript" src="assets/scripts/owl.carousel.min.js"></script>

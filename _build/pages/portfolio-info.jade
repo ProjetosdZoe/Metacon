@@ -57,42 +57,52 @@ html
             
         section.default.contents-portfolio-info
             .row
-                .col-md-12
-                    .portfolio-panes
-                        .pane(data-pane="1")
-                            .container
-                                .row
-                                    .col-md-4
-                                        figure
-                                            img(src="assets/images/portfolio-info/01.jpg", class="img-responsive")
-                                    .col-md-8.text-infos
-                                        h2.block-title DIMENSÃO E COMPOSIÇÃO
-                                        span  Área total : 15.655,31 m2.
+                .portfolio-panes
+                    .pane(data-pane="1")
+                        .container
+                            .row
+                                .col-md-4
+                                    figure
+                                        img(src="assets/images/portfolio-info/01.jpg", class="img-responsive")
+                                .col-md-8.text-infos
+                                    h2.block-title DIMENSÃO E COMPOSIÇÃO
+                                    span  Área total : 15.655,31 m2.
 
-                                        h2.block-title TORRE RESIDENCIAL:
+                                    h2.block-title TORRE RESIDENCIAL:
 
-                                        ul.info-list
-                                            li Acesso Privativo – Térreo;
-                                            li Pavimento Lazer: Sala de Jogos; Fitness; Salão Gourmet; Piscina; Espaço Kids, Lazer Descoberto.
-                                            li 16 Pavimentos Tipo;
-                                            li 80 Apartamentos de 02 Dormitórios (suíte) compostos por: Sala de Estar / Jantar, Varanda, Dormitório 01 (Suíte), Dormitório 02, Bwc Social, Cozinha, Área de Serviço, com área privativa de 65,00m2, e área total de 120,00m2 cada; com 01 vaga de garagem;
+                                    ul.info-list
+                                        li Acesso Privativo – Térreo;
+                                        li Pavimento Lazer: Sala de Jogos; Fitness; Salão Gourmet; Piscina; Espaço Kids, Lazer Descoberto.
+                                        li 16 Pavimentos Tipo;
+                                        li 80 Apartamentos de 02 Dormitórios (suíte) compostos por: Sala de Estar / Jantar, Varanda, Dormitório 01 (Suíte), Dormitório 02, Bwc Social, Cozinha, Área de Serviço, com área privativa de 65,00m2, e área total de 120,00m2 cada; com 01 vaga de garagem;
 
 
-                                        h2.block-title TORRE COMERCIAL
+                                    h2.block-title TORRE COMERCIAL
 
-                                        ul.info-list
-                                            li Acesso Privativo - Térreo
-                                            li Torre comercial - 10 pavimentos
-                                            li 01 Loja Térrea, com área privativa de 385m2, área total de 605,00m2 e 08 vagas de garagem, e possibilidade de mezanino com 385,00m2
-                                            li 40 Salas | Escritórios, com área privativa média de 50 m2 cada, e área total média de 96,00m2, e 01 vaga de garagem cada;
-                                            li Pavimento de Apoio, com 03 Salas de Reuniões e Área Administrativa.
+                                    ul.info-list
+                                        li Acesso Privativo - Térreo
+                                        li Torre comercial - 10 pavimentos
+                                        li 01 Loja Térrea, com área privativa de 385m2, área total de 605,00m2 e 08 vagas de garagem, e possibilidade de mezanino com 385,00m2
+                                        li 40 Salas | Escritórios, com área privativa média de 50 m2 cada, e área total média de 96,00m2, e 01 vaga de garagem cada;
+                                        li Pavimento de Apoio, com 03 Salas de Reuniões e Área Administrativa.
 
-                        .pane(data-pane="2")
-                            #portfolioMap(data-lat="",data-lng="")
-                        .pane(data-pane="3")
-                            p pane 03
-                        .pane(data-pane="4")
-                            p pane 04
+                    .pane(data-pane="2")
+                        .portfolio-mapwrapper
+                            #portfolioMap(data-lat="-23.3178821",data-lng="-51.1645811",data-title="title")
+                            span.overlay
+                                h2 Av. Jorge Casoni, esquina com a Rua Norman Prochet, Londrina, PR, em um terreno de 2.364,06 m2.
+                    .pane(data-pane="3")
+                        .row.relative
+                            a.next.glyphicon.glyphicon-chevron-right.hidden-sm.hidden-xs#carousel-next
+                            #carousel.portfolioGallery
+                                figure(style="background-image: url('assets/images/portfolio-info/gallery/01.jpg')")
+                                    h2 ESPAÇO GOURMET
+                                    span  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste atque debitis incidunt aliquam velit voluptates.
+                                figure(style="background-image: url('assets/images/portfolio-info/gallery/01.jpg')")
+                                    h2 ESPAÇO GOURMET
+                                    span  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste atque debitis incidunt aliquam velit voluptates.
+                    .pane(data-pane="4")
+                        p pane 04
                         
         section.aqua
             .container
@@ -118,7 +128,7 @@ html
         script(type="text/javascript" src="assets/scripts/jquery-1.11.3.min.js")
         script(type="text/javascript" src="assets/scripts/jquery.easing.1.3.js")
         script(type="text/javascript" src="assets/scripts/jquery.animate-enhanced.min.js")
-        script(type="text/javascript" src="https://maps.googleapis.com/maps/api/js")
+        script(type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false")
         script(type="text/javascript" src="assets/scripts/scrollIt.min.js")
         script(type="text/javascript" src="assets/scripts/jquery.scrollSpeed.js")
         script(type="text/javascript" src="assets/scripts/owl.carousel.min.js")

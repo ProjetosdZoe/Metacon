@@ -48,10 +48,33 @@ section.hero.portfolio-info
             width: 100%
             transition: all 0.3s ease-in-out
             
-            #portfolioMap
+            .portfolio-mapwrapper                
+                position: relative
                 width: 100%
-                height: 300px
-                background-color: pink
+                height: 400px
+                
+                #portfolioMap
+                    width: 100%
+                    height: 400px
+                    z-index: 10
+
+                span.overlay
+                    display: block
+                    width: 75%
+                    position: absolute
+                    left: 0
+                    bottom: 7.5%
+                    z-index: 20
+
+                    h2
+                        color: $black-dark
+                        background-color: rgba($white-light, 0.60)
+                        border-radius: 0 6px 6px 0
+                        font:
+                            size: 30px
+                            weight: 700
+                        display: inline-block
+                        padding: 10px 15px
             
             figure
                 padding: 16px
@@ -103,4 +126,21 @@ section.hero.portfolio-info
                                 repeat: no-repeat
                                 position: 0px center
                             padding-left: 35px
+                        
+            .portfolioGallery
+                figure
+                    width: 100%
+                    height: 500px
+                    background: 
+                        repeat: no-repeat
+                        size: cover
+                        
+                    h2
+                        font:
+                            size: 32px
+                            weight: 300
+                            
+                    span
+                        font:
+                            size: 18px
                         
