@@ -134,13 +134,31 @@ section.hero.portfolio-info
                     background: 
                         repeat: no-repeat
                         size: cover
+                    position: relative
+                    
+                    .info
+                        position: absolute
+                        right: 0
+                        bottom: 6%
+                        background-color: rgba($black-dark, 0.60)
+                        border-radius: 6px 0 0 6px
+                        display: flex
+                        flex-direction: column
                         
-                    h2
-                        font:
-                            size: 32px
-                            weight: 300
-                            
-                    span
-                        font:
-                            size: 18px
+                        h2
+                            font:
+                                size: 60px
+                                weight: 100
+                            color: $white-light
+                            width: auto
+                            text-transform: uppercase
+                            padding: 4px 10px
+                            margin: 0
+
+                        span
+                            font:
+                                size: 18px
+                            color: $white-light
+                            padding: 2px 10px
+                            display: block
                         
