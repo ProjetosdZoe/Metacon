@@ -88,7 +88,10 @@ html
                                             li Pavimento de Apoio, com 03 Salas de Reuniões e Área Administrativa.
 
                         .pane(data-pane="2")
-                            #portfolioMap(data-lat="",data-lng="")
+                            .portfolio-mapwrapper
+                                #portfolioMap(data-lat="-23.3178821",data-lng="-51.1645811",data-title="title")
+                                span.overlay
+                                    h2 Av. Jorge Casoni, esquina com a Rua Norman Prochet, Londrina, PR, em um terreno de 2.364,06 m2.
                         .pane(data-pane="3")
                             p pane 03
                         .pane(data-pane="4")
@@ -118,7 +121,7 @@ html
         script(type="text/javascript" src="assets/scripts/jquery-1.11.3.min.js")
         script(type="text/javascript" src="assets/scripts/jquery.easing.1.3.js")
         script(type="text/javascript" src="assets/scripts/jquery.animate-enhanced.min.js")
-        script(type="text/javascript" src="https://maps.googleapis.com/maps/api/js")
+        script(type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false")
         script(type="text/javascript" src="assets/scripts/scrollIt.min.js")
         script(type="text/javascript" src="assets/scripts/jquery.scrollSpeed.js")
         script(type="text/javascript" src="assets/scripts/owl.carousel.min.js")

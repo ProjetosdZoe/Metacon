@@ -26,6 +26,7 @@
             $portfolioNav     = $(".portfolio-nav"),
             $portfolioNavTab  = $portfolioNav.find("[data-tab]"),
             $portfolioPanes   = $(".portfolio-panes"),
+            $portfolioMap     = $("#portfolioMap"),
             SSConfig          = {
                 hashchange: false,
                 slide_speed: 5000,
@@ -278,6 +279,38 @@
                 'display' : 'block',
                 'opacity' : '1'
             });
+            
+            if(id == 2)
+            {
+                google.maps.event.addDomListener(window, 'load', portfolioMap($portfolioMap) );
+            }
+        }
+        
+        function portfolioMap(info)
+        {   
+            var coord = {  lat: info.data("lat"), lng: info.data("lng")  };
+        
+            var map = new google.maps.Map(document.getElementById('portfolioMap'),{
+              center: coord,
+              zoom: 18
+            });
+
+            var marker = new google.maps.Marker({
+                position: coord,
+                map: map,
+                title: info.data("title") ,
+                icon : {
+                    url: 'assets/images/marker.png',
+                    origin: new google.maps.Point(0,0),
+                    anchor: new google.maps.Point(40,68)
+                }
+            });
+
+            var markerInfo = new google.maps.InfoWindow({
+                content: "<div id='map-marker'>"+info.data("title")+"</div>"
+            });
+
+            google.maps.event.addListener(marker, 'click', function() { markerInfo.open(map,marker); });
         }
 
         $(window).scroll(function(){
@@ -289,6 +322,12 @@
             scrollTopVisibility(offset);
             
         });
+        
+        
+        if( navigator.userAgent.indexOf("Windows") != -1 || navigator.userAgent.indexOf("Linux") != -1)
+        {
+            $.scrollSpeed(100, 800);
+        }    
         
         if( $homeSlider.length )
         {   
@@ -344,12 +383,6 @@
             $portfolioNavTab.on("click", function(){ togglePortfolioPane( $(this).data("tab") ) });            
             $portfolioNavTab.eq(0).trigger("click");
         }
-        
-        if( navigator.userAgent.indexOf("Windows") != -1 || navigator.userAgent.indexOf("Linux") != -1)
-        {
-            $.scrollSpeed(100, 800);
-        }
-        
         
         $.scrollIt();
         
