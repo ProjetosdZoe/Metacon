@@ -45,26 +45,6 @@
             }
         }
         
-        function heroBackground(offset)
-        {
-            var height = $hero.height();
-            if (offset <= height )
-            {
-                if ( height < 500 )
-                {                    
-                    $hero.css({
-                        'background-position' : " 50%  -"+ (offset * 8 ) / 12 +"px "
-                    });
-                }
-                else
-                {
-                    $hero.css({
-                        'background-position' : " 50%  -"+ (offset * 8) / 6 +"px "
-                    });
-                }
-            }
-        }
-        
         function scrollTopVisibility(offset)
         {
             var toggleH = ($window.height()/4);
@@ -294,7 +274,6 @@
             var offset = $(window).scrollTop();
         
             stickyHeader(offset);
-            heroBackground(offset);
             scrollTopVisibility(offset);
             
         });
