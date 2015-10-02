@@ -49,9 +49,18 @@
         {
             if (offset <= $hero.height() )
             {
-                $hero.css({
-                    'background-position' : " center  -"+ (offset * 8 ) / 5 +"px "
-                });
+                if ( $hero.height() < 500 )
+                {                    
+                    $hero.css({
+                        'background-position' : " center  -"+ (offset * 8 ) / 16 +"px "
+                    });
+                }
+                else
+                {
+                    $hero.css({
+                        'background-position' : " center  -"+ (offset * 8 ) / 5 +"px "
+                    });
+                }
             }
         }
         
