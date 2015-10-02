@@ -49,8 +49,7 @@
         {
             var height = $hero.height();
             if (offset <= height )
-            {
-                            
+            {                            
                 $hero.css({
                     'background-position' : " 50% "+ ((offset * 100) / height) * 2 +"%"
                 });
