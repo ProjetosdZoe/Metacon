@@ -27,7 +27,10 @@
             $portfolioNav     = $(".portfolio-nav"),
             $portfolioNavTab  = $portfolioNav.find("[data-tab]"),
             $portfolioPanes   = $(".portfolio-panes"),
-            $portfolioMap     = $("#portfolioMap"),
+            $portfolioMap     = $("#portfolioMap"),            
+            $obraFilter       = $(".obra-filter"),
+            $obraItem         = $(".obra-item"),
+            $obraFilterItem   = $obraFilter.find("li"),
             SSConfig          = {
                 hashchange: false,
                 slide_speed: 10000,
@@ -319,6 +322,46 @@
             $portfolioNavTab.removeClass('active');
             nav.addClass('active');
         }
+        
+        function toggleObraFilterItem($this)
+        {
+            $obraFilterItem.removeClass("active");
+            $($this).addClass("active");
+        }
+        
+        function filterObraItems(id)
+        {
+            
+            $obraItem.each(function(){
+                $(this).show();
+                
+                if( id == 0  )
+                {
+                    $(this).show();
+                }
+                else
+                {                  
+                    if( $(this).data("type") != id )
+                    {
+                        $(this).hide();
+                    }
+                }
+                
+            });
+            
+        }
+        
+        function toggleObraTitle(item,flag)
+        {
+            if(flag == 1)
+            {
+                $(item).find("figure span").css({ 'bottom' : '0%' });
+            }
+            else
+            {
+                $(item).find("figure span").css({ 'bottom' : '-100%' });
+            }
+        }
 
         $(window).scroll(function(){
     
@@ -395,6 +438,18 @@
         {
             $portfolioNavTab.on("click", function(){ togglePortfolioNavClass( $(this) ); togglePortfolioPane( $(this).data("tab") ); });            
             $portfolioNavTab.eq(0).trigger("click");
+        }
+        
+        if( $obraFilter.length )
+        {
+            $obraFilterItem.on("click", function(){ toggleObraFilterItem( this ); filterObraItems( $(this).data("filter") ) });
+        }
+        
+        if( $obraItem.length )
+        {
+            $obraItem
+                .on("mouseenter", function(){ toggleObraTitle( this , 1); })
+                .on("mouseleave", function(){ toggleObraTitle( this , 2); });
         }
         
         $.scrollIt();
