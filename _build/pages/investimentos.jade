@@ -1,0 +1,100 @@
+include mixins
+
+doctype html
+html
+    head
+    
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        meta(name="description" content="Painel Administrativo")
+        meta(name="author" content="Hudson Nicoletti")
+    
+        title  Metacon
+        
+        link(rel="stylesheet", href="assets/styles/main.css")
+        link(rel="shortcut icon" href="/favicon.ico")
+    body
+            
+        header
+            .container
+                .row
+                    .col-md-12
+
+                        .search-container
+                                input(type="text" placeholder="Pesquisar:")
+                                i.glyphicon.glyphicon-remove.search-toggle
+
+                        .logo-container
+                            .logo
+                            
+                        .nav-toggle.visible-md.visible-sm.visible-xs.menu-toggle
+                            i.glyphicon.glyphicon-menu-hamburger
+
+                        .menu-container
+                            .visible-lg
+                                +nav
+                    
+                    .menu-container.mobile
+                        +nav("mobile")
+                
+        section.hero.investimento
+            h2.title Investimentos
+            hr.small.blue
+            
+        .login-container
+            
+        section.default.contents-investimento
+            .container
+                .row
+                    .col-md-12
+                        ul.obra-filter
+                            li(data-filter="0").active
+                                span Todos
+                            li(data-filter="1")
+                                span Filtro 01
+                            li(data-filter="2")
+                                span Filtro 02
+                            li(data-filter="3")
+                                span Filtro 03
+                            li(data-filter="4")
+                                span Filtro 04
+                                
+                .row
+                    +obraItem( 1, 'assets/images/portfolio/01.jpg', 'nome da obra 01', 'local', 'resumo breve', 'portfolio-info.html')
+                    +obraItem( 1, 'assets/images/portfolio/02.jpg', 'nome da obra 02', 'local', 'resumo breve', 'portfolio-info.html')
+                    +obraItem( 3, 'assets/images/portfolio/03.jpg', 'nome da obra 03', 'local', 'resumo breve', 'portfolio-info.html')
+                    +obraItem( 3, 'assets/images/portfolio/04.jpg', 'nome da obra 04', 'local', 'resumo breve', 'portfolio-info.html')
+                    +obraItem( 2, 'assets/images/portfolio/05.jpg', 'nome da obra 05', 'local', 'resumo breve', 'portfolio-info.html')
+                    +obraItem( 1, 'assets/images/portfolio/06.jpg', 'nome da obra 06', 'local', 'resumo breve', 'portfolio-info.html')
+                    +obraItem( 1, 'assets/images/portfolio/07.jpg', 'nome da obra 07', 'local', 'resumo breve', 'portfolio-info.html')
+                    +obraItem( 1, 'assets/images/portfolio/08.jpg', 'nome da obra 08', 'local', 'resumo breve', 'portfolio-info.html')
+                        
+        section.aqua
+            .container
+                .row.text-center
+                    .col-md-12.social-container
+                        span.subtitle Conecte-se com a gente:
+                        ul
+                            li: a: i.fa.fa-google-plus
+                            li: a: i.fa.fa-linkedin-square
+                            li: a: i.fa.fa-pinterest
+                            li: a: i.fa.fa-twitter
+                            li: a: i.fa.fa-facebook
+                            
+        +footer()
+            
+        .scroll-top
+            a
+                i.fa.fa-chevron-up
+                
+        a(data-scroll-goto="0").hidden
+            
+                    
+        script(type="text/javascript" src="assets/scripts/jquery-1.11.3.min.js")
+        script(type="text/javascript" src="assets/scripts/jquery.easing.1.3.js")
+        script(type="text/javascript" src="assets/scripts/jquery.animate-enhanced.min.js")
+        script(type="text/javascript" src="https://maps.googleapis.com/maps/api/js")
+        script(type="text/javascript" src="assets/scripts/scrollIt.min.js")
+        script(type="text/javascript" src="assets/scripts/jquery.scrollSpeed.js")
+        script(type="text/javascript" src="assets/scripts/owl.carousel.min.js")
+        script(type="text/javascript" src="assets/scripts/functions.js")
