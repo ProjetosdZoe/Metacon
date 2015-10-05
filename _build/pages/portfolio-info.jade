@@ -93,8 +93,12 @@ html
                                 h2 Av. Jorge Casoni, esquina com a Rua Norman Prochet, Londrina, PR, em um terreno de 2.364,06 m2.
                     .pane(data-pane="3")
                         .row.relative
-                            a.next.glyphicon.glyphicon-chevron-right.hidden-sm.hidden-xs#carousel-next
-                            #carousel.portfolioGallery
+                            .carousel-controls
+                                .carousel-prev
+                                    img(src="assets/images/icons/carousel-prev.png", alt="Anterior")
+                                .carousel-next
+                                    img(src="assets/images/icons/carousel-next.png", alt="Próximo")
+                            .carousel.portfolioGallery(data-pagination='false')
                                 figure(style="background-image: url('assets/images/portfolio-info/gallery/01.jpg')")
                                     .info
                                         h2 ESPAÇO GOURMET
@@ -104,7 +108,19 @@ html
                                         h2 ESPAÇO GOURMET
                                         span  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste atque debitis incidunt aliquam velit voluptates.
                     .pane(data-pane="4")
-                        p pane 04
+                        .row.relative
+                            .carousel-controls
+                                .carousel-prev.transparent
+                                    img(src="assets/images/icons/carousel-prev-alt.png", alt="Anterior")
+                                .carousel-next.transparent
+                                    img(src="assets/images/icons/carousel-next-alt.png", alt="Próximo")
+                            .carousel.portfolioPlants(data-pagination='false')
+                                .plantscontainer
+                                    span Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum labore, eius?
+                                    img(src="assets/images/portfolio-info/structure/01.png", alt="")
+                                .plantscontainer
+                                    span Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    img(src="assets/images/portfolio-info/structure/01.png", alt="")
                         
         section.aqua
             .container

@@ -15,8 +15,9 @@
             $map              = $("#map-coords"),
             $mapArea          = $("#map-coords area"),
             $mapInfo          = $(".map-info"),
-            $carousel         = $("#carousel"),
-            $carouselN        = $("#carousel-next"),
+            $carousel         = $(".carousel"),
+            $carouselP        = $(".carousel-prev"),
+            $carouselN        = $(".carousel-next"),
             $googleMap        = $("#googleMap"),
             $contactForm      = $(".contact-form form"),
             $contactInput     = $contactForm.find("[id*='contact']"),
@@ -29,7 +30,7 @@
             $portfolioMap     = $("#portfolioMap"),
             SSConfig          = {
                 hashchange: false,
-                slide_speed: 5000,
+                slide_speed: 10000,
                 pagination: false,
                 play: 5000
             };
@@ -312,6 +313,12 @@
 
             google.maps.event.addListener(marker, 'click', function() { markerInfo.open(map,marker); });
         }
+        
+        function togglePortfolioNavClass(nav)
+        {
+            $portfolioNavTab.removeClass('active');
+            nav.addClass('active');
+        }
 
         $(window).scroll(function(){
     
@@ -342,17 +349,23 @@
         
         if( $carousel.length )
         {
-            $carousel.owlCarousel({
+            $carousel.each(function(){
+                
+                $(this).owlCarousel({
  
-                  navigation : false, // Show next and prev buttons
-                  slideSpeed : 300,
-                  paginationSpeed : 400,
-                  singleItem:true
- 
+                      navigation : false, // Show next and prev buttons
+                      slideSpeed : 300,
+                      pagination : $carousel.data("pagination"),
+                      paginationSpeed : 400,
+                      singleItem: true
+
+                });               
+                        
+                var owl = $(this).data('owlCarousel');
+                $carouselN.on("click", function(){ owl.next()  });
+                $carouselP.on("click", function(){ owl.prev()  });
+
             });
-            
-            var owl = $carousel.data('owlCarousel');
-            $carouselN.on("click", function(){ owl.next()  });
         }
         
         if( $googleMap.length )
@@ -380,7 +393,7 @@
         
         if( $portfolioNav.length )
         {
-            $portfolioNavTab.on("click", function(){ togglePortfolioPane( $(this).data("tab") ) });            
+            $portfolioNavTab.on("click", function(){ togglePortfolioNavClass( $(this) ); togglePortfolioPane( $(this).data("tab") ); });            
             $portfolioNavTab.eq(0).trigger("click");
         }
         
