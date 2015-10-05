@@ -15,8 +15,9 @@
             $map              = $("#map-coords"),
             $mapArea          = $("#map-coords area"),
             $mapInfo          = $(".map-info"),
-            $carousel         = $("#carousel"),
-            $carouselN        = $("#carousel-next"),
+            $carousel         = $(".carousel"),
+            $carouselP        = $(".carousel-prev"),
+            $carouselN        = $(".carousel-next"),
             $googleMap        = $("#googleMap"),
             $contactForm      = $(".contact-form form"),
             $contactInput     = $contactForm.find("[id*='contact']"),
@@ -26,10 +27,13 @@
             $portfolioNav     = $(".portfolio-nav"),
             $portfolioNavTab  = $portfolioNav.find("[data-tab]"),
             $portfolioPanes   = $(".portfolio-panes"),
-            $portfolioMap     = $("#portfolioMap"),
+            $portfolioMap     = $("#portfolioMap"),            
+            $obraFilter       = $(".obra-filter"),
+            $obraItem         = $(".obra-item"),
+            $obraFilterItem   = $obraFilter.find("li"),
             SSConfig          = {
                 hashchange: false,
-                slide_speed: 5000,
+                slide_speed: 10000,
                 pagination: false,
                 play: 5000
             };
@@ -52,7 +56,7 @@
             if (offset <= height )
             {                            
                 $hero.css({
-                    'background-position' : " 50% "+ ((offset * 100) / height) * 2 +"%"
+                    'background-position' : " 50% "+ Math.round(((offset * 100) / height) * 2 )+"%"
                 });
             }
         }
@@ -312,6 +316,52 @@
 
             google.maps.event.addListener(marker, 'click', function() { markerInfo.open(map,marker); });
         }
+        
+        function togglePortfolioNavClass(nav)
+        {
+            $portfolioNavTab.removeClass('active');
+            nav.addClass('active');
+        }
+        
+        function toggleObraFilterItem($this)
+        {
+            $obraFilterItem.removeClass("active");
+            $($this).addClass("active");
+        }
+        
+        function filterObraItems(id)
+        {
+            
+            $obraItem.each(function(){
+                $(this).show();
+                
+                if( id == 0  )
+                {
+                    $(this).show();
+                }
+                else
+                {                  
+                    if( $(this).data("type") != id )
+                    {
+                        $(this).hide();
+                    }
+                }
+                
+            });
+            
+        }
+        
+        function toggleObraTitle(item,flag)
+        {
+            if(flag == 1)
+            {
+                $(item).find("figure span").css({ 'bottom' : '0%' });
+            }
+            else
+            {
+                $(item).find("figure span").css({ 'bottom' : '-100%' });
+            }
+        }
 
         $(window).scroll(function(){
     
@@ -342,17 +392,23 @@
         
         if( $carousel.length )
         {
-            $carousel.owlCarousel({
+            $carousel.each(function(){
+                
+                $(this).owlCarousel({
  
-                  navigation : false, // Show next and prev buttons
-                  slideSpeed : 300,
-                  paginationSpeed : 400,
-                  singleItem:true
- 
+                      navigation : false, // Show next and prev buttons
+                      slideSpeed : 300,
+                      pagination : $carousel.data("pagination"),
+                      paginationSpeed : 400,
+                      singleItem: true
+
+                });               
+                        
+                var owl = $(this).data('owlCarousel');
+                $carouselN.on("click", function(){ owl.next()  });
+                $carouselP.on("click", function(){ owl.prev()  });
+
             });
-            
-            var owl = $carousel.data('owlCarousel');
-            $carouselN.on("click", function(){ owl.next()  });
         }
         
         if( $googleMap.length )
@@ -380,8 +436,20 @@
         
         if( $portfolioNav.length )
         {
-            $portfolioNavTab.on("click", function(){ togglePortfolioPane( $(this).data("tab") ) });            
+            $portfolioNavTab.on("click", function(){ togglePortfolioNavClass( $(this) ); togglePortfolioPane( $(this).data("tab") ); });            
             $portfolioNavTab.eq(0).trigger("click");
+        }
+        
+        if( $obraFilter.length )
+        {
+            $obraFilterItem.on("click", function(){ toggleObraFilterItem( this ); filterObraItems( $(this).data("filter") ) });
+        }
+        
+        if( $obraItem.length )
+        {
+            $obraItem
+                .on("mouseenter", function(){ toggleObraTitle( this , 1); })
+                .on("mouseleave", function(){ toggleObraTitle( this , 2); });
         }
         
         $.scrollIt();

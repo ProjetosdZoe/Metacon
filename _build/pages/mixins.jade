@@ -6,7 +6,7 @@ mixin nav(mobile)
             li: a(href="./investimentos.html") Investimentos
             li: a(href="./lancamentos.html") Lançamentos
             li: a(href="./portfolio.html") Portfólio
-            li: a(href="./minha-obra.html") Sua Obra 
+            li: a(href="./obra.html") Sua Obra 
             li: a(href="./contact.html") Contato 
             li.visible-lg: i.glyphicon.glyphicon-search.search-toggle
             
@@ -31,6 +31,18 @@ mixin portfolioItem(type,image,title,link)
                 img(src=image)
                 span 
                     h2!=title
+                    
+mixin obraItem(type,image,title,local,resume,link)
+    .col-lg-3.col-md-4.col-sm-6.col-xs-12.obra-item(data-type=type)
+        a(href=link)
+            figure
+                img(src=image)
+                span 
+                    h2!=title
+                    strong!=local
+                    strong!=resume
+                    img(src="assets/images/icons/icon-house.png")
+                    strong.uppercase acompanhe aqui
             
 mixin footer()
     section.dark

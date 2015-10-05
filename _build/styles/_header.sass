@@ -5,7 +5,7 @@ header
     border-bottom: 1px solid rgba(255, 255, 255, 0.23)
     background-color: transparent
     transition: all 0.3s ease-in-out
-    z-index: 2
+    z-index: 10
     top: 0
     
     &.sticky
@@ -26,7 +26,7 @@ header
                         line-height: 95px
                         
                         &:hover a,
-                        &:hoverhover i,
+                        &:hover i,
                             color: $blue-light !important
                             cursor: pointer
                         
@@ -44,7 +44,6 @@ header
                 color: $black-light !important
             &:-moz-placeholder
                 color: $black-light !important
-        
 
     .search-container
         opacity: 0
@@ -202,3 +201,32 @@ header
                         text-decoration: none
                         color: $white-light
                         transition: all 0.3s ease-in-out
+                        
+                        
+    &.dark-nav
+        .menu-container 
+            nav 
+                ul 
+                    li 
+                        a, i
+                            color: $black-dark !important
+                            
+        .search-container
+            input
+                color: $black-dark
+
+                &::-webkit-input-placeholder
+                    color: $black-dark
+                &:-ms-input-placeholder
+                    color: $black-dark
+                &::-moz-placeholder
+                    color: $black-dark
+                &:-moz-placeholder
+                    color: $black-dark
+
+            i
+                color: $black-dark
+
+                &:hover
+                    cursor: pointer
+                    color: $blue-light

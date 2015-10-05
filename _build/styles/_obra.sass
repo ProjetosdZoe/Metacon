@@ -1,0 +1,81 @@
+section.hero.obra
+    background: 
+        image: url(../images/hero-section/portfolio.jpg)
+        
+.contents-obra
+    
+    ul.obra-filter
+        list-style: none
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-direction: row        
+        flex-wrap: wrap
+        padding: 10px 0
+        
+        li
+            padding: 6px 16px
+            background-color: $white-light
+            cursor: pointer
+            
+            transition: all 0.3s ease-in-out
+            
+            
+            span
+                color: $black-dark
+                font:
+                    size: 16px
+                    weight: 900
+            
+            &.active
+                background-color: $blue-light
+                
+                span
+                    color: $white-light
+                    
+    .obra-item
+        transition: all 0.3s ease-in-out
+        margin-bottom: 30px
+        
+        figure
+            width: 100%
+            height: 100%
+            overflow: hidden
+            position: relative
+            
+            img
+                width: 100%
+                height: 100%
+                
+            span
+                position: absolute
+                width: 100%
+                height: 100%
+                bottom: -100%
+                left: 0
+                text-align: right
+                background-color: rgba(0,0,0, 0.55)
+                transition: all 0.3s ease-in-out
+                display: flex
+                align-items: center
+                justify-content: center
+                flex-direction: column
+                
+                img
+                    width: 65px
+                    height: 65px
+                    margin-top: 10px
+                
+                h2
+                    font: 
+                        size: 20px
+                        weight: 300
+                    color: $white-light
+                    text-transform: uppercase
+                    
+                strong
+                    color: $white-light
+                    text-transform: uppercase
+                    font: 
+                        size: 16px
+                        weight: 900
