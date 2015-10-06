@@ -9,7 +9,34 @@
     <link rel="stylesheet" href="assets/styles/main.css">
     <link rel="shortcut icon" href="/favicon.ico">
   </head>
-  <body>
+  <body>           
+    <div class="popup-overlay"></div>
+    <div class="popup">
+      <div class="login-container"><a href="#" class="close"> </a>
+        <form action="#">
+          <div class="row">
+            <div class="col-md-12">
+              <h2>PARA ACESSAR ESSA ÁREA, PREENCHA ABAIXO:</h2>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="text" id="username">
+                <label for="username">Nome</label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="text" id="password">
+                <label for="password">Senha</label>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <button type="submit">Entrar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
     <header>
       <div class="container">
         <div class="row">
@@ -61,7 +88,6 @@
       <h2 class="title">Investimentos</h2>
       <hr class="small blue">
     </section>
-    <div class="login-container"></div>
     <section class="default contents-investimento">
       <div class="container">
         <div class="row">
