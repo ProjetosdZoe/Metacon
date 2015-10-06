@@ -21,6 +21,8 @@
             $googleMap        = $("#googleMap"),
             $contactForm      = $(".contact-form form"),
             $contactInput     = $contactForm.find("[id*='contact']"),
+            $loginForm        = $(".login-container form"),
+            $loginInput       = $loginForm.find("input"),
             $portfolioFilter  = $(".portfolio-filter"),
             $portfolioItem    = $(".portfolio-item"),
             $portFilterItem   = $portfolioFilter.find("li"),
@@ -31,6 +33,8 @@
             $obraFilter       = $(".obra-filter"),
             $obraItem         = $(".obra-item"),
             $obraFilterItem   = $obraFilter.find("li"),
+            $popupOverlay     = $(".popup-overlay"),
+            $popup            = $(".popup"),
             SSConfig          = {
                 hashchange: false,
                 slide_speed: 10000,
@@ -422,6 +426,11 @@
             $.each( $contactInput, function(){ formInputAction(this) });
         }
         
+        if( $loginForm.length )
+        {
+            $.each( $loginInput, function(){ formInputAction(this) });
+        }
+        
         if( $portfolioFilter.length )
         {
             $portFilterItem.on("click", function(){ togglePortfolioFilterItem( this ); filterPortfolioItems( $(this).data("filter") ) });
@@ -450,6 +459,22 @@
             $obraItem
                 .on("mouseenter", function(){ toggleObraTitle( this , 1); })
                 .on("mouseleave", function(){ toggleObraTitle( this , 2); });
+        }
+        
+        if( $popup.length )
+        {
+            $popup.find("form").on("submit", function(){
+                
+                $popup.css({
+                    'display' : 'none'
+                });
+                $popupOverlay.css({
+                    'display' : 'none'
+                });
+                
+                return false;
+
+            });
         }
         
         $.scrollIt();

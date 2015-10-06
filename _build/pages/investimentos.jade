@@ -13,8 +13,27 @@ html
         
         link(rel="stylesheet", href="assets/styles/main.css")
         link(rel="shortcut icon" href="/favicon.ico")
-    body
-            
+    body            
+    
+        .popup-overlay
+        .popup
+            .login-container
+                a.close(href="#") 
+                form(action="#")
+                    .row
+                        .col-md-12
+                            h2 PARA ACESSAR ESSA ÁREA, PREENCHA ABAIXO:
+                        .col-md-6
+                            .form-group
+                                input(type="text",id="username")
+                                label(for="username") Nome
+                        .col-md-6
+                            .form-group
+                                input(type="text",id="password")
+                                label(for="password") Senha
+                        .col-md-12
+                            button(type="submit") Entrar
+    
         header
             .container
                 .row
@@ -40,8 +59,6 @@ html
         section.hero.investimento
             h2.title Investimentos
             hr.small.blue
-            
-        .login-container
             
         section.default.contents-investimento
             .container
