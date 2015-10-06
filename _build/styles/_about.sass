@@ -3,7 +3,7 @@ section.hero.about
         image: url(../images/hero-section/about.jpg)
         
 .contents-about
-        
+    padding-bottom: 0
 
     map
         area 
@@ -95,9 +95,10 @@ section.hero.about
                             
                             
     p.headline
-        font: 
+        font:
             size: 18px
             weight: 400
+        text-align: justify
             
     .about-box
         width: 100%
@@ -140,6 +141,8 @@ section.hero.about
                 height: 100%
                 width: 50%
                 order: 2
+                padding: 25px 20px
+                position: relative
                 
                 @media( max-width: 960px )
                     width: 100%
@@ -149,16 +152,19 @@ section.hero.about
                     width: 80px
                     height: 4px
                     background-color: $blue-light
-                    margin: 0 20px
-                    clear: both
+                    margin: 20px 0
+                    position: absolute
+                    top: -6px
+                    
+                    @media( max-width: 640px )
+                        display: none
                     
                     &.right
-                        float: right
+                        right: 20px
                     &.left
-                        float: left
+                        left: 20px
                 
                 p
-                    padding: 25px 20px
                     float: left
                     clear: both
                     display: block
@@ -206,7 +212,8 @@ section.hero.about
             font: 
                 size: 16px
         .text
-            text-align: left
+            text-align: justify
+            text-justify: distribute
             font: 
                 size: 14px
         

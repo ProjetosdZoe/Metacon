@@ -19,7 +19,7 @@ html
         .popup
             .login-container
                 a.close(href="#") 
-                form(action="#")
+                form(action="investimentos-index.html")
                     .row
                         .col-md-12
                             h2 PARA ACESSAR ESSA ÁREA, PREENCHA ABAIXO:
@@ -59,32 +59,6 @@ html
         section.hero.investimento
             h2.title Investimentos
             hr.small.blue
-            
-        section.default.contents-investimento
-            .container
-                .row
-                    .col-md-12
-                        ul.obra-filter
-                            li(data-filter="0").active
-                                span Todos
-                            li(data-filter="1")
-                                span Filtro 01
-                            li(data-filter="2")
-                                span Filtro 02
-                            li(data-filter="3")
-                                span Filtro 03
-                            li(data-filter="4")
-                                span Filtro 04
-                                
-                .row
-                    +obraItem( 1, 'assets/images/portfolio/01.jpg', 'nome da obra 01', 'local', 'resumo breve', 'portfolio-info.html')
-                    +obraItem( 1, 'assets/images/portfolio/02.jpg', 'nome da obra 02', 'local', 'resumo breve', 'portfolio-info.html')
-                    +obraItem( 3, 'assets/images/portfolio/03.jpg', 'nome da obra 03', 'local', 'resumo breve', 'portfolio-info.html')
-                    +obraItem( 3, 'assets/images/portfolio/04.jpg', 'nome da obra 04', 'local', 'resumo breve', 'portfolio-info.html')
-                    +obraItem( 2, 'assets/images/portfolio/05.jpg', 'nome da obra 05', 'local', 'resumo breve', 'portfolio-info.html')
-                    +obraItem( 1, 'assets/images/portfolio/06.jpg', 'nome da obra 06', 'local', 'resumo breve', 'portfolio-info.html')
-                    +obraItem( 1, 'assets/images/portfolio/07.jpg', 'nome da obra 07', 'local', 'resumo breve', 'portfolio-info.html')
-                    +obraItem( 1, 'assets/images/portfolio/08.jpg', 'nome da obra 08', 'local', 'resumo breve', 'portfolio-info.html')
                         
         section.aqua
             .container
