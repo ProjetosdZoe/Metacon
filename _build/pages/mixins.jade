@@ -32,6 +32,14 @@ mixin portfolioItem(type,image,title,link)
                 span 
                     h2!=title
                     
+mixin investItem(type,image,title,link)
+    .col-lg-6.col-md-6.col-sm-12.col-xs-12.investimento-item(data-type=type)
+        a(href=link)
+            figure
+                img(src=image)
+                span 
+                    h2!=title
+                    
 mixin obraItem(type,image,title,local,resume,link)
     .col-lg-3.col-md-4.col-sm-6.col-xs-12.obra-item(data-type=type)
         a(href=link)

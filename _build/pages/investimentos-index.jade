@@ -1,0 +1,100 @@
+include mixins
+
+doctype html
+html
+    head
+    
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        meta(name="description" content="Painel Administrativo")
+        meta(name="author" content="Hudson Nicoletti")
+    
+        title  Metacon
+        
+        link(rel="stylesheet", href="assets/styles/main.css")
+        link(rel="shortcut icon" href="/favicon.ico")
+    body
+    
+        header
+            .container
+                .row
+                    .col-md-12
+
+                        .search-container
+                                input(type="text" placeholder="Pesquisar:")
+                                i.glyphicon.glyphicon-remove.search-toggle
+
+                        .logo-container
+                            .logo
+                            
+                        .nav-toggle.visible-md.visible-sm.visible-xs.menu-toggle
+                            i.glyphicon.glyphicon-menu-hamburger
+
+                        .menu-container
+                            .visible-lg
+                                +nav
+                    
+                    .menu-container.mobile
+                        +nav("mobile")
+                
+        section.hero.investimento
+            h2.title Investimentos
+            hr.small.blue
+            
+            
+        section.default.contents-investimento
+            .container
+                .row
+                    .col-md-12
+                        ul.investimento-filter
+                            li(data-filter="0").active
+                                span Todos
+                            li(data-filter="1")
+                                span Filtro 01
+                            li(data-filter="2")
+                                span Filtro 02
+                            li(data-filter="3")
+                                span Filtro 03
+                            li(data-filter="4")
+                                span Filtro 04
+                                
+                .row
+                    .col-md-12.description
+                        h2.title Sul Invest
+                        p.text.justify Com um VGV de aproximadamente 1 bilhão de reais, a Sul Invest Holding foi criada para reunir e administrar os novos projetos e incorporações da Metacon Engenharia, a fim de tornar a gestão dos mesmos alinhada às melhores práticas de governança do mercado. 
+                        p.text.justify Cada projeto é representado por uma SPE (Sociedade de Propósito Específico) e está subordinada a Holding, que é detentora de suas cotas em parte ou no todo, facilitando desta forma não só a visibilidade das incorporações mas, também a movimentação financeira e contábil de cada empreendimento. 
+                        p.text.justify Desta forma, também foi criado um importante conjunto de ativos imobiliários e financeiros, o que coloca a Sul Invest em condições de captar recursos e estabelecer parcerias com os maiores players do mercado.
+                                
+                .row
+                    +investItem( 1, 'assets/images/portfolio/03.jpg', 'PIONEIROS BOULEVARD', 'portfolio-info.html')
+                    +investItem( 1, 'assets/images/portfolio/03.jpg', 'PIONEIROS BOULEVARD', 'portfolio-info.html')
+                        
+        section.aqua
+            .container
+                .row.text-center
+                    .col-md-12.social-container
+                        span.subtitle Conecte-se com a gente:
+                        ul
+                            li: a: i.fa.fa-google-plus
+                            li: a: i.fa.fa-linkedin-square
+                            li: a: i.fa.fa-pinterest
+                            li: a: i.fa.fa-twitter
+                            li: a: i.fa.fa-facebook
+                            
+        +footer()
+            
+        .scroll-top
+            a
+                i.fa.fa-chevron-up
+                
+        a(data-scroll-goto="0").hidden
+            
+                    
+        script(type="text/javascript" src="assets/scripts/jquery-1.11.3.min.js")
+        script(type="text/javascript" src="assets/scripts/jquery.easing.1.3.js")
+        script(type="text/javascript" src="assets/scripts/jquery.animate-enhanced.min.js")
+        script(type="text/javascript" src="https://maps.googleapis.com/maps/api/js")
+        script(type="text/javascript" src="assets/scripts/scrollIt.min.js")
+        script(type="text/javascript" src="assets/scripts/jquery.scrollSpeed.js")
+        script(type="text/javascript" src="assets/scripts/owl.carousel.min.js")
+        script(type="text/javascript" src="assets/scripts/functions.js")
