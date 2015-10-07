@@ -1,9 +1,25 @@
 .slides
     z-index: 0
+    position: relative
+    width: 100vw
+    height: 100vh
+    overflow: hidden
     
     ul.slides-container
+        width: 100%
+        height: 100%
+        position: relative
+        padding: 0
+        margin: 0
         
         li
+            height: 100vh
+            width: 100%
+            background:
+                position: 0 0
+                size: cover
+                repeat: no-repeat
+                
             .container
                 display: flex
                 align-items: center
@@ -11,20 +27,48 @@
                 width: 100%
                 height: 100%
                 padding: 0 16px
+                margin: 0
+                
+                button.btn-lead
+                    background-color: transparent
+                    font-family: Raleway
+                    border: 2px solid $white-light
+                    color: $white-light
+                    font-size: 26px
+                    padding: 10px 40px
+                    transition: all 0.3s ease-in-out
+                    border-radius: 0
+                    text-transform: uppercase
+                    text-align: center
+
+                    &:hover
+                        background-color: $white-light
+                        color: $black-light
+
+                    &.dark
+                        border: 2px solid $black-light
+                        color: $black-light
+
+                        &:hover
+                            background-color: $black-light
+                            color: $white-light
+                
                 
                 h2
-                    font-size: 70px
+                    font-size: responsive 50px 70px
                     padding: 10px 0
+                    color: $white-light
                     strong,b
                         font-weight: bold
                 
                 span
                     display: inline-block
                     padding: 10px 0
+                    color: $white-light
                     
-                @media(max-width: 400px)
-                    h2 
-                        font-size: 50px
+                h2,span
+                    &.dark
+                        color: $black-dark
                 
 nav.slides-navigation
     a

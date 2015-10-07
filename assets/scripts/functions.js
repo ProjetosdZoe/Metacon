@@ -3,7 +3,7 @@
     $(document).ready(function(){
         
         var $window           = $(window),
-            $homeSlider       = $('.slides'),
+            $homeSlider       = $('.slides ul'),
             $hero             = $("section.hero"),
             $logo             = $('.logo-container'),
             $menu             = $('.menu-container'),
@@ -38,11 +38,15 @@
             $investFilterItem = $investFilter.find("li"),
             $popupOverlay     = $(".popup-overlay"),
             $popup            = $(".popup"),
-            SSConfig          = {
-                hashchange: false,
-                slide_speed: 10000,
-                pagination: false,
-                play: 5000
+            SliderConfig      = {
+                autoPlay : true,
+                navigation : false,
+                slideSpeed : 300,
+                pagination : false,
+                paginationSpeed : 400,
+                singleItem: true,
+                stopOnHover: true,
+                addClassActive: false
             };
         
         function stickyHeader(offset)
@@ -428,7 +432,7 @@
         
         if( $homeSlider.length )
         {   
-            $homeSlider.superslides(SSConfig)
+            $homeSlider.owlCarousel(SliderConfig);
         }
         
         if( $map.length )
