@@ -32,7 +32,10 @@
             $portfolioMap     = $("#portfolioMap"),            
             $obraFilter       = $(".obra-filter"),
             $obraItem         = $(".obra-item"),
-            $obraFilterItem   = $obraFilter.find("li"),
+            $obraFilterItem   = $obraFilter.find("li"),          
+            $investFilter     = $(".investimento-filter"),
+            $investItem       = $(".investimento-item"),
+            $investFilterItem = $investFilter.find("li"),
             $popupOverlay     = $(".popup-overlay"),
             $popup            = $(".popup"),
             SSConfig          = {
@@ -366,6 +369,46 @@
                 $(item).find("figure span").css({ 'bottom' : '-100%' });
             }
         }
+        
+        function toggleInvestFilterItem($this)
+        {
+            $investFilterItem.removeClass("active");
+            $($this).addClass("active");
+        }
+        
+        function filterInvestItems(id)
+        {
+            
+            $investItem.each(function(){
+                $(this).show();
+                
+                if( id == 0  )
+                {
+                    $(this).show();
+                }
+                else
+                {                  
+                    if( $(this).data("type") != id )
+                    {
+                        $(this).hide();
+                    }
+                }
+                
+            });
+            
+        }
+        
+        function toggleInvestTitle(item,flag)
+        {
+            if(flag == 1)
+            {
+                $(item).find("figure span").css({ 'right' : '0%' });
+            }
+            else
+            {
+                $(item).find("figure span").css({ 'right' : '-100%' });
+            }
+        }
 
         $(window).scroll(function(){
     
@@ -461,6 +504,18 @@
                 .on("mouseleave", function(){ toggleObraTitle( this , 2); });
         }
         
+        if( $investFilter.length )
+        {
+            $investFilterItem.on("click", function(){ toggleInvestFilterItem( this ); filterInvestItems( $(this).data("filter") ) });
+        }
+        
+        if( $investItem.length )
+        {
+            $investItem
+                .on("mouseenter", function(){ toggleInvestTitle( this , 1); })
+                .on("mouseleave", function(){ toggleInvestTitle( this , 2); });
+        }
+        
         if( $popup.length )
         {
             $popup.find("form").on("submit", function(){
@@ -471,6 +526,8 @@
                 $popupOverlay.css({
                     'display' : 'none'
                 });
+                
+                window.location = $(this).attr("action");
                 
                 return false;
 
