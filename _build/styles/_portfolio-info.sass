@@ -57,6 +57,9 @@ section.hero.portfolio-info
                 width: 100%
                 height: 100%
                 z-index: 1
+                
+                @media( max-width: 640px )
+                    display: none
                     
                 .carousel-prev
                     position: absolute
@@ -90,7 +93,7 @@ section.hero.portfolio-info
                     &.transparent
                         background-color: transparent !important
             
-            .portfolio-mapwrapper                
+            .portfolio-mapwrapper
                 position: relative
                 width: 100%
                 height: 400px
@@ -113,7 +116,7 @@ section.hero.portfolio-info
                         background-color: rgba($white-light, 0.60)
                         border-radius: 0 6px 6px 0
                         font:
-                            size: 30px
+                            size: responsive 24px 30px
                             weight: 700
                         display: inline-block
                         padding: 10px 15px
@@ -162,7 +165,7 @@ section.hero.portfolio-info
                         padding: 6px 0
                         
                         &:before
-                            content: ""                      
+                            content: ""                   
                             background:
                                 image: url('../images/bullet.png')
                                 repeat: no-repeat
@@ -177,13 +180,14 @@ section.hero.portfolio-info
                     justify-content: center
                     flex-direction: column
                     width: 100%
+                    padding: 0 10px
                     
                     img
                         max-width: 60%
                         
                     span
                         color: $blue-light
-                        font: 
+                        font:
                             size: 22px
                             weight: 400
                         padding: 10px 0
@@ -192,7 +196,7 @@ section.hero.portfolio-info
                 figure
                     width: 100%
                     height: 500px
-                    background: 
+                    background:
                         repeat: no-repeat
                         size: cover
                     position: relative
@@ -205,10 +209,11 @@ section.hero.portfolio-info
                         border-radius: 6px 0 0 6px
                         display: flex
                         flex-direction: column
+                        padding: 15px
                         
                         h2
                             font:
-                                size: 60px
+                                size: responsive 46px 60px
                                 weight: 100
                             color: $white-light
                             width: auto
