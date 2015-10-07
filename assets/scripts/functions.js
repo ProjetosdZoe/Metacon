@@ -192,6 +192,7 @@
             var map = new google.maps.Map(document.getElementById('googleMap'),{
                 center: { lat: -23.3178821, lng: -51.1645811 },
                 scrollwheel: false,
+                draggable: false,
                 zoom: 18
             });
 
@@ -203,7 +204,7 @@
                     marker     = new google.maps.Marker({
                         position: position,
                         map: map,
-                        title: 'Comunidade da Graça de Londrina',
+                        title: 'Metacon Engenharia',
                         icon : {
                             url: 'assets/images/marker.png',
                             origin: new google.maps.Point(0,0),
