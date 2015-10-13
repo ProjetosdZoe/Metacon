@@ -21,8 +21,25 @@ mixin team(image,name,pos,text)
         .col-md-6.col-ms-12
             h2.name= name
                 strong= pos
-
+                
             != text
+                
+mixin teamDubble(image1,image2,name1,name2,text1,text2)
+    .carousel-item
+        .col-md-6.col-ms-12
+            .row
+                .col-md-4
+                    img(src=image1 , alt=name1, class="img-responsive")
+                .col-md-8
+                    h2.name.teamdubble=name1
+                    !=text1
+        .col-md-6.col-ms-12
+            .row
+                .col-md-4
+                    img(src=image2 , alt=name2, class="img-responsive")
+                .col-md-8
+                    h2.name.teamdubble=name2
+                    !=text2
             
 mixin portfolioItem(type,image,title,link)
     .col-lg-3.col-md-4.col-sm-6.col-xs-12.portfolio-item(data-type=type)

@@ -451,6 +451,7 @@
                       navigation : false, // Show next and prev buttons
                       slideSpeed : 300,
                       pagination : $carousel.data("pagination"),
+                      autoHeight : $carousel.data("resize"),
                       paginationSpeed : 400,
                       singleItem: true
 
