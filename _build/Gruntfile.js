@@ -52,6 +52,17 @@ module.exports = function(grunt){
             }
         },
         
+        imagemin: {
+            dynamic: {                         // Another target 
+                files: [{
+                    expand: true,                  // Enable dynamic expansion 
+                    cwd: '../assets/images/',      // Src matches are relative to this path 
+                    src: ['**/*.{png,jpg,gif}'],   // Actual patterns to match 
+                    dest: '../assets/images/'      // Destination path prefix 
+                }]
+            }
+        },
+        
         watch: {
             sass: 
             {
@@ -85,7 +96,8 @@ module.exports = function(grunt){
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-jade');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-rucksack');
     grunt.loadNpmTasks('grunt-postcss');
-    grunt.registerTask('default', ['watch'])
+    grunt.registerTask('default', ['watch','imagemin'])
 }

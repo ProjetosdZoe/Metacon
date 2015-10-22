@@ -23,6 +23,8 @@
             $contactInput     = $contactForm.find("[id*='contact']"),
             $loginForm        = $(".login-container form"),
             $loginInput       = $loginForm.find("input"),
+            $portfolioPages   = $(".portfolio-pages"),
+            $portfolioPlace   = $(".portfolio-placeholder"),
             $portfolioFilter  = $(".portfolio-filter"),
             $portfolioItem    = $(".portfolio-item"),
             $portFilterItem   = $portfolioFilter.find("li"),
@@ -47,6 +49,9 @@
                 singleItem: true,
                 stopOnHover: true,
                 addClassActive: false
+            },
+            settings        =   {
+                owlPortfolio: null
             };
         
         function stickyHeader(offset)
@@ -67,7 +72,7 @@
             if (offset <= height )
             {                            
                 $hero.css({
-                    'background-position' : " 50% "+ Math.round(((offset * 100) / height) * 2 )+"%"
+                    'background-position' : " 50% "+ Math.round( ((offset * 100) / height * 3) ) +"%"
                 });
             }
         }
@@ -191,6 +196,10 @@
 
             var map = new google.maps.Map(document.getElementById('googleMap'),{
                 center: { lat: -23.3178821, lng: -51.1645811 },
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                zoomControlOptions: {
+		    	style: google.maps.ZoomControlStyle.LARGE,
+		    },
                 scrollwheel: false,
                 draggable: false,
                 zoom: 18
@@ -253,7 +262,7 @@
         {
             
             $portfolioItem.each(function(){
-                $(this).show();
+                //$(this).show(400).find("a figure").css({ 'width' : "100%" , 'height' : "100%" })
                 
                 if( id == 0  )
                 {
@@ -263,7 +272,13 @@
                 {                  
                     if( $(this).data("type") != id )
                     {
+                        
                         $(this).hide();
+                        
+                    }
+                    else
+                    {
+                        $(this).show();
                     }
                 }
                 
@@ -413,6 +428,64 @@
             {
                 $(item).find("figure span").css({ 'right' : '-100%' });
             }
+        }    
+        
+        function portfoliopagesclear()
+        {
+            $portfolioItem.each(function(){
+                $(this).detach().appendTo($portfolioPlace);
+            });
+            $portfolioPages.find("[data-page]").each(function(){$(this).remove()})
+        }
+                
+        function portfoliopages()
+        {
+            var pages = {
+                xs : Math.ceil(($portfolioItem.length / 1)),
+                sm : Math.ceil(($portfolioItem.length / 4)),
+                md : Math.ceil(($portfolioItem.length / 6)),
+                lg : Math.ceil(($portfolioItem.length / 8)),
+                vp : null,
+                nb : null,
+            };
+            
+            if( $window.width() < 640 )
+            {
+                pages.vp = pages.xs;
+                pages.nb = 1;
+            }
+            else if( $window.width() > 640 && $window.width() < 960 )
+            { 
+                pages.vp = pages.sm;
+                pages.nb = 3;
+            }
+            else if( $window.width() > 960 && $window.width() < 1280 )
+            {
+                pages.vp = pages.md;
+                pages.nb = 5;
+            }
+            else if( $window.width() >= 1280 )
+            {
+                pages.vp = pages.lg;
+                pages.nb = 7;
+            }
+            
+            for(var pga=0; pga < pages.vp; pga++)
+            {                    
+                var d = document.createElement('div');
+                $(d).addClass('page').attr("data-page", pga+1 ).appendTo($portfolioPages); 
+
+                $portfolioPlace.find($portfolioItem).each(function(z){
+                    if( z <= pages.nb )
+                    {
+                        $(this).detach().appendTo($portfolioPages.find("[data-page='"+(pga+1)+"']"));
+                    }
+                });
+            }
+            if( settings.owlPortfolio != null )
+            {
+                
+            }
         }
 
         $(window).scroll(function(){
@@ -481,12 +554,27 @@
         }
         
         if( $portfolioFilter.length )
-        {
-            $portFilterItem.on("click", function(){ togglePortfolioFilterItem( this ); filterPortfolioItems( $(this).data("filter") ) });
+        {            
+            $portFilterItem.on("click", function(){                
+                togglePortfolioFilterItem( this ); 
+                filterPortfolioItems( $(this).data("filter") );
+//                settings.owlPortfolio.data("owlCarousel").destroy();
+//                portfoliopagesclear();
+//                portfoliopages();                
+//                var owl = $portfolioPages.owlCarousel({
+//                   singleItem: true 
+//                });
+//                settings.owlPortfolio = owl;
+            });
         }
         
         if( $portfolioItem.length )
         {
+            portfoliopages();
+//            var owl = $portfolioPages.owlCarousel({
+//               singleItem: true 
+//            });
+//            settings.owlPortfolio = owl;
             $portfolioItem
                 .on("mouseenter", function(){ togglePortfolioTitle( this , 1); })
                 .on("mouseleave", function(){ togglePortfolioTitle( this , 2); });
@@ -545,6 +633,7 @@
         searchToggle();
         mobileMenu();
         scrollTop();
+        
     });
     
 })(jQuery)
