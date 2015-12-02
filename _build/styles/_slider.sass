@@ -16,10 +16,46 @@
         li
             height: 100vh
             width: 100%
+            position: relative
             background:
-                position: 0 0
+                position: center center
                 size: cover
                 repeat: no-repeat
+                
+            .box
+                display: flex
+                align-items: center
+                justify-content: center
+                flex-direction: column
+                position: absolute
+                bottom: 15%
+                right: 0
+                background-color: rgba(50,66,87,0.60)
+                padding: 10px 20px
+                
+                @media( max-width: 960px )
+                    width: 100%
+                    
+                .wrapper
+                    
+                    width: calc( 100% - 70px )
+                
+                    h2
+                        font-size: responsive 40px 70px
+                        padding: 10px 0
+                        color: $white-light
+                        strong,b
+                            font-weight: bold
+                        text-align: center
+
+                    span
+                        display: inline-block
+                        padding: 10px 0
+                        color: $white-light
+                        font:
+                            size: 16px
+                            weight: bold
+                        text-align: justify
                 
             .container
                 display: flex
