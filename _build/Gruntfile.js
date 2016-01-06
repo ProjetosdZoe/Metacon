@@ -26,6 +26,7 @@ module.exports = function(grunt){
                     "../obra.html": "pages/obra.jade",
                     "../investimentos.html": "pages/investimentos.jade",
                     "../investimentos-index.html": "pages/investimentos-index.jade",
+                    "../investimentos-info.html": "pages/investimentos-info.jade",
                 }
             }
         },

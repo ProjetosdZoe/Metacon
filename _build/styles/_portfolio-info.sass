@@ -188,6 +188,12 @@ section.hero.portfolio-info
                                 color: $white-light
                                 text-transform: uppercase
                                 
+                            
+                            
+                        &.solid
+                            li:last-child
+                                background-color: $blue-light
+                                
                 .details-block
                     width: 100%
                     
@@ -222,6 +228,15 @@ section.hero.portfolio-info
                                 
                         li + li
                             border-top: 1px solid rgba( $Grey , 0.60 )
+                            
+                        li > ul > li
+                            padding-left: 10px
+                            
+                        li > ul > li:before
+                            content: "- "
+                            
+                        li > ul > li + li
+                            border: 0
                     
             .portfolioPlants
                 

@@ -1,0 +1,226 @@
+include mixins
+
+doctype html
+html
+    head
+    
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        meta(name="description" content="Painel Administrativo")
+        meta(name="author" content="Hudson Nicoletti")
+    
+        title  Metacon
+        
+        link(rel="stylesheet", href="assets/styles/main.css")
+        link(rel="shortcut icon" href="/favicon.ico")
+    body
+            
+        header
+            .container
+                .row
+                    .col-md-12
+
+                        .search-container
+                                input(type="text" placeholder="Pesquisar:")
+                                i.glyphicon.glyphicon-remove.search-toggle
+
+                        .logo-container
+                            .logo
+                            
+                        .nav-toggle.visible-md.visible-sm.visible-xs.menu-toggle
+                            i.glyphicon.glyphicon-menu-hamburger
+
+                        .menu-container
+                            .visible-lg
+                                +nav
+                    
+                    .menu-container.mobile
+                        +nav("mobile")
+                
+        section.hero.portfolio-info
+            h2.title nome da obra
+            hr.small.blue
+            span.subtitle londrina - pr
+            
+        section.blue.contents-portfolio-info(style="padding: 0 10px; margin-bottom:20px;")
+            .container
+                .row.text-center
+                    .col-md-12
+                        ul.portfolio-nav
+                            li(data-tab="1"): a Ficha Técnica
+                            span
+                            li(data-tab="2"): a localização
+                            span
+                            li(data-tab="3"): a Imagens
+                            span
+                            li(data-tab="4"): a Planta
+            
+        section.default.contents-portfolio-info
+            .row
+                .portfolio-panes
+                    .pane(data-pane="1")
+                        .container
+                            .row
+                                .col-md-3
+                                    figure
+                                        img(src="assets/images/portfolio-info/01.jpg", class="img-responsive")
+                                .col-md-9.text-infos
+                                    .intro-block
+                                        h2.subtitle EDIFÍCIO RESIDENCIAL AMADEUS
+                                        p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet reiciendis ea, ducimus voluptatum laboriosam explicabo nemo dolor, possimus excepturi expedita iure sequi consequuntur incidunt ipsa voluptates saepe dolorum blanditiis. Dolores quis magni sequi molestiae error veritatis, unde eius earum dolor!
+                                        
+                                    .info-block
+                                        ul.solid
+                                            li 
+                                                span.title Apartamentos
+                                                figure
+                                                    span.text 80
+                                                    img(src="assets/images/icons/keys.png", alt="")
+                                            li 
+                                                span.title Lojas
+                                                figure
+                                                    span.text 01
+                                                    img(src="assets/images/icons/store.png", alt="")
+                                            li 
+                                                span.title Salas Comerciais
+                                                figure
+                                                    span.text 40
+                                                    img(src="assets/images/icons/building.png", alt="")
+                                            li 
+                                                span.title Área de Lazer
+                                                figure
+                                                    img(src="assets/images/icons/kids.png", alt="")
+                                            li 
+                                                span.title Estacionamento
+                                                figure
+                                                    span.text 125 Vagas
+                                                    img(src="assets/images/icons/cars.png", alt="")  
+                                    .info-block
+                                        ul.solid
+                                            li 
+                                                span.title ÁREA TOTAL CONSTRUÍDA
+                                                figure
+                                                    img(src="assets/images/icons/meter.png", alt="")
+                                                    span.text 14.340,27  M<sup>2</sup>
+
+                                            li 
+                                                span.title ÁREA SALAS COMERCIAIS
+                                                figure
+                                                    img(src="assets/images/icons/meter.png", alt="")
+                                                    span.text 50,00  M<sup>2</sup>
+                                                    
+                                            li 
+                                                span.title ÁREA APARTAMENTOS
+                                                figure
+                                                    img(src="assets/images/icons/meter.png", alt="")
+                                                    span.text 51,73 M<sup>2</sup> a 82,07 M<sup>2</sup>
+                                                    
+                                                    
+                                    .details-block
+                                        .row
+                                            .block.col-md-3
+                                                h2.title COMPOSIÇÃO EMPREENDIMENTO
+                                                ul
+                                                    li 119 Apartamentos 
+                                                    li 2 Apartamentos luxo  
+                                                    li Espaço para eventos e reuniôes  
+                                                    li Área de lazer completa 
+                                                    
+                                            .block.col-md-3
+                                                h2.title COMPOSIÇÃO Unidade
+                                                ul
+                                                    li Salas Comerciais de 50,00 m²
+                                                    li 
+                                                        | Aptos de 51,73 m² a 82,07 m² com:
+                                                        ul                                                    
+                                                            li 1 Suíte
+                                                            li 1/2 Dormitórios 
+                                                            li Sala de Estar/Jantar
+                                                            li Sacada 
+                                                            li Cozinha
+                                                            li Área de Serviço
+
+
+                                            .block.col-md-3
+                                                h2.title facilidades
+                                                ul
+                                                    li Portaria
+                                                    li Elevador
+                                                    li Central de lixo
+                                                    li Estacionamento
+
+
+                                            .block.col-md-3
+                                                h2.title lazer
+                                                ul
+                                                    li Espaço Gourmet com churrasqueira 
+                                                    li Espaço kids
+                                                    li Salão de jogos
+                                                    li Espaço fitness
+
+
+                    .pane(data-pane="2")
+                        .portfolio-mapwrapper
+                            #portfolioMap(data-lat="-23.3178821",data-lng="-51.1645811",data-title="title")
+                            span.overlay
+                                h2 Av. Jorge Casoni, esquina com a Rua Norman Prochet, Londrina, PR, em um terreno de 2.364,06 m2.
+                    .pane(data-pane="3")
+                        .row.relative
+                            .carousel-controls
+                                .carousel-prev
+                                    img(src="assets/images/icons/carousel-prev.png", alt="Anterior")
+                                .carousel-next
+                                    img(src="assets/images/icons/carousel-next.png", alt="Próximo")
+                            .carousel.portfolioGallery(data-pagination='false')
+                                figure(style="background-image: url('assets/images/portfolio-info/gallery/01.jpg')")
+                                    .info
+                                        h2 ESPAÇO GOURMET
+                                        span  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste atque debitis incidunt aliquam velit voluptates.
+                                figure(style="background-image: url('assets/images/portfolio-info/gallery/01.jpg')")
+                                    .info
+                                        h2 ESPAÇO GOURMET
+                                        span  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste atque debitis incidunt aliquam velit voluptates.
+                    .pane(data-pane="4")
+                        .row.relative
+                            .carousel-controls
+                                .carousel-prev.transparent
+                                    img(src="assets/images/icons/carousel-prev-alt.png", alt="Anterior")
+                                .carousel-next.transparent
+                                    img(src="assets/images/icons/carousel-next-alt.png", alt="Próximo")
+                            .carousel.portfolioPlants(data-pagination='false')
+                                .plantscontainer
+                                    span Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum labore, eius?
+                                    img(src="assets/images/portfolio-info/structure/01.png", alt="")
+                                .plantscontainer
+                                    span Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    img(src="assets/images/portfolio-info/structure/01.png", alt="")
+                        
+        section.grey
+            .container
+                .row.text-center
+                    .col-md-12.social-container
+                        span.subtitle Conecte-se com a gente:
+                        ul
+                            li: a: i.fa.fa-google-plus
+                            li: a: i.fa.fa-linkedin-square
+                            li: a: i.fa.fa-pinterest
+                            li: a: i.fa.fa-twitter
+                            li: a: i.fa.fa-facebook
+                            
+        +footer()
+            
+        .scroll-top
+            a
+                i.fa.fa-chevron-up
+                
+        a(data-scroll-goto="0").hidden
+            
+                    
+        script(type="text/javascript" src="assets/scripts/jquery-1.11.3.min.js")
+        script(type="text/javascript" src="assets/scripts/jquery.easing.1.3.js")
+        script(type="text/javascript" src="assets/scripts/jquery.animate-enhanced.min.js")
+        script(type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false")
+        script(type="text/javascript" src="assets/scripts/scrollIt.min.js")
+        script(type="text/javascript" src="assets/scripts/jquery.scrollSpeed.js")
+        script(type="text/javascript" src="assets/scripts/owl.carousel.min.js")
+        script(type="text/javascript" src="assets/scripts/functions.js")
