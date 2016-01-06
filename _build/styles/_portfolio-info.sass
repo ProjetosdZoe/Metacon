@@ -134,44 +134,95 @@ section.hero.portfolio-info
                 align-items: center
                 justify-content: center
                 flex-direction: column
+                
+                .intro-block
+                    width: 100%
 
-                h2.block-title
-                    display: block
-                    padding: 5px 10px
-                    margin: 0
-                    background-color: $blue-light
-                    color: $white-light
-                    font:
-                        size: 24px
-                        weight: 500
+                    h2.subtitle
+                        color: $blue-dark
                         
-                span
-                    display: block
-                    margin: 20px 0
-                    font:
-                        size: 18px
-                        weight: 700
-                    color: $black-dark
-                    
-                ul
-                    list-style: none
-                    margin: 20px 0
-                    padding: 0
-                    
-                    li
+                    p
+                        color: $black-dark
                         font:
                             size: 16px
-                            weight: 700
-                        padding: 6px 0
+                            
+                .info-block
+                    width: 100%
+                    
+                    ul
+                        padding: 0
+                        margin: 0
+                        list-style: none
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        flex-direction: row
+                        width: 100%
+                        position: relative
                         
-                        &:before
-                            content: ""                   
-                            background:
-                                image: url('../images/bullet.png')
-                                repeat: no-repeat
-                                position: 0px center
-                            padding-left: 35px
+                        li
+                            display: flex
+                            justify-content: center
+                            align-items: center
+                            flex-direction: column
+                            background-color: $blue-light
+                            padding: 10px
+                            width: 100%
+                            height: 110px
+                            text-align: center
+                            
+                            &:last-child
+                                background-color: $Grey
+                            
+                            span.title
+                                font:
+                                    size: 16px
+                                    weight: 900
+                                color: $white-light
+                                text-transform: uppercase
+                                
+                            span.text
+                                font:
+                                    size: 16px
+                                    weight: 900
+                                color: $white-light
+                                text-transform: uppercase
+                                
+                .details-block
+                    width: 100%
+                    
+                    h2.title
+                        display: inline-block
+                        width: 100%
+                        padding: 10px 10px
+                        text-align: center
+                        color: $white-light
+                        text-transform: uppercase
+                        background-color: $Grey
+                        font:
+                            size: 16px
+                            weight: 900
+                            
+                    ul
+                        padding: 0
+                        margin: 0
+                        list-style: none
+                        display: flex
+                        align-items: flex-start
+                        justify-content: center
+                        flex-direction: column
+                        width: 100%
                         
+                        li
+                            padding: 4px 0
+                            font:
+                                weight: 700
+                            width: 100%
+                            display: inline-block
+                                
+                        li + li
+                            border-top: 1px solid rgba( $Grey , 0.60 )
+                    
             .portfolioPlants
                 
                 .plantscontainer                    
