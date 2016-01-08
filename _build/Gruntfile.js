@@ -18,15 +18,17 @@ module.exports = function(grunt){
                     pretty: true
                 },
                 files: {
-                    "../index.html": "pages/index.jade",
-                    "../about.html": "pages/about.jade",
-                    "../contact.html": "pages/contact.jade",
-                    "../portfolio.html": "pages/portfolio.jade",
-                    "../portfolio-info.html": "pages/portfolio-info.jade",
-                    "../obra.html": "pages/obra.jade",
-                    "../investimentos.html": "pages/investimentos.jade",
-                    "../investimentos-index.html": "pages/investimentos-index.jade",
-                    "../investimentos-info.html": "pages/investimentos-info.jade",
+                    "../index.html":                "pages/index.jade",
+                    "../about.html":                "pages/about.jade",
+                    "../contact.html":              "pages/contact.jade",
+                    "../portfolio.html":            "pages/portfolio.jade",
+                    "../portfolio-info.html":       "pages/portfolio-info.jade",
+                    "../obra.html":                 "pages/obra.jade",
+                    "../lancamentos.html":          "pages/lancamentos.jade",
+                    "../lancamentos-info.html":          "pages/lancamentos-info.jade",
+                    "../investimentos.html":        "pages/investimentos.jade",
+                    "../investimentos-index.html":  "pages/investimentos-index.jade",
+                    "../investimentos-info.html":   "pages/investimentos-info.jade",
                 }
             }
         },

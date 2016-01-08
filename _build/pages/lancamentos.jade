@@ -1,0 +1,119 @@
+include mixins
+
+doctype html
+html
+    head
+    
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        meta(name="description" content="Painel Administrativo")
+        meta(name="author" content="Hudson Nicoletti")
+    
+        title  Metacon
+        
+        link(rel="stylesheet", href="assets/styles/main.css")
+        link(rel="shortcut icon" href="/favicon.ico")
+    body
+            
+        header
+            .container
+                .row
+                    .col-md-12
+
+                        .search-container
+                                input(type="text" placeholder="Pesquisar:")
+                                i.glyphicon.glyphicon-remove.search-toggle
+
+                        .logo-container
+                            .logo
+                            
+                        .nav-toggle.visible-md.visible-sm.visible-xs.menu-toggle
+                            i.glyphicon.glyphicon-menu-hamburger
+
+                        .menu-container
+                            .visible-lg
+                                +nav
+                    
+                    .menu-container.mobile
+                        +nav("mobile")
+                
+        section.hero.lancamentos
+            h2.title Lançamentos
+            hr.small.blue
+            
+        section.default.contents-portfolio
+            .container
+                .row
+                    .col-md-12
+                        ul.portfolio-filter
+                            li(data-filter="0").active
+                                span Todos
+                            li(data-filter="1")
+                                span Filtro 01
+                            li(data-filter="2")
+                                span Filtro 02
+                            li(data-filter="3")
+                                span Filtro 03
+                            li(data-filter="4")
+                                span Filtro 04
+                                
+                .row
+                    .portfolio-pages
+                    .portfolio-placeholder.hidden
+                        +portfolioItem( 1, 'assets/images/portfolio/01.jpg', 'munique'            , 'lancamentos-info.html')
+                        +portfolioItem( 2, 'assets/images/portfolio/02.jpg', 'bauhause'           , 'lancamentos-info.html')
+                        +portfolioItem( 3, 'assets/images/portfolio/03.jpg', 'expoara'            , 'lancamentos-info.html')
+                        +portfolioItem( 4, 'assets/images/portfolio/04.jpg', 'vilarego'           , 'lancamentos-info.html')
+                        +portfolioItem( 3, 'assets/images/portfolio/05.jpg', 'bratislava'         , 'lancamentos-info.html')
+                        +portfolioItem( 2, 'assets/images/portfolio/06.jpg', 'angelo bazo'        , 'lancamentos-info.html')
+                        +portfolioItem( 1, 'assets/images/portfolio/07.jpg', 'mozarte'            , 'lancamentos-info.html')
+                        +portfolioItem( 2, 'assets/images/portfolio/08.jpg', 'ventramento'        , 'lancamentos-info.html')
+                        +portfolioItem( 3, 'assets/images/portfolio/09.jpg', 'comercial europa'   , 'lancamentos-info.html')
+                        +portfolioItem( 4, 'assets/images/portfolio/10.jpg', 'salvador dali'      , 'lancamentos-info.html')
+                        +portfolioItem( 3, 'assets/images/portfolio/11.jpg', 'amadeus'            , 'lancamentos-info.html')
+                        +portfolioItem( 2, 'assets/images/portfolio/12.jpg', 'amsterdam'          , 'lancamentos-info.html')                    
+                        +portfolioItem( 1, 'assets/images/portfolio/13.jpg', 'napoli'             , 'lancamentos-info.html')
+                        +portfolioItem( 2, 'assets/images/portfolio/14.jpg', 'mario romagnolli'   , 'lancamentos-info.html')
+                        +portfolioItem( 3, 'assets/images/portfolio/15.jpg', 'wall street'        , 'lancamentos-info.html')
+                        +portfolioItem( 4, 'assets/images/portfolio/16.jpg', 'baldan'             , 'lancamentos-info.html')
+                        +portfolioItem( 3, 'assets/images/portfolio/17.jpg', 'estrela do lago'    , 'lancamentos-info.html')
+                        +portfolioItem( 2, 'assets/images/portfolio/18.jpg', 'blue tree'          , 'lancamentos-info.html')
+                        +portfolioItem( 1, 'assets/images/portfolio/19.jpg', 'nova aliança'       , 'lancamentos-info.html')
+                        +portfolioItem( 2, 'assets/images/portfolio/20.jpg', 'estância cabral'    , 'lancamentos-info.html')
+                        +portfolioItem( 3, 'assets/images/portfolio/21.jpg', 'planet'             , 'lancamentos-info.html')
+                        +portfolioItem( 4, 'assets/images/portfolio/22.jpg', 'mart center'        , 'lancamentos-info.html')
+                        +portfolioItem( 3, 'assets/images/portfolio/23.jpg', 'go inn jaguaré'     , 'lancamentos-info.html')
+                        +portfolioItem( 2, 'assets/images/portfolio/24.jpg', 'aparecida'          , 'lancamentos-info.html')
+                        +portfolioItem( 1, 'assets/images/portfolio/25.jpg', 'monte mariá'        , 'lancamentos-info.html')
+                        +portfolioItem( 2, 'assets/images/portfolio/26.jpg', 'casa de oração'     , 'lancamentos-info.html')
+                        +portfolioItem( 3, 'assets/images/portfolio/27.jpg', 'hospital'           , 'lancamentos-info.html')
+                        
+        section.grey
+            .container
+                .row.text-center
+                    .col-md-12.social-container
+                        span.subtitle Conecte-se com a gente:
+                        ul
+                            li: a: i.fa.fa-google-plus
+                            li: a: i.fa.fa-linkedin-square
+                            li: a: i.fa.fa-pinterest
+                            li: a: i.fa.fa-twitter
+                            li: a: i.fa.fa-facebook
+                            
+        +footer()
+            
+        .scroll-top
+            a
+                i.fa.fa-chevron-up
+                
+        a(data-scroll-goto="0").hidden
+            
+                    
+        script(type="text/javascript" src="assets/scripts/jquery-1.11.3.min.js")
+        script(type="text/javascript" src="assets/scripts/jquery.easing.1.3.js")
+        script(type="text/javascript" src="assets/scripts/jquery.animate-enhanced.min.js")
+        script(type="text/javascript" src="https://maps.googleapis.com/maps/api/js")
+        script(type="text/javascript" src="assets/scripts/scrollIt.min.js")
+        script(type="text/javascript" src="assets/scripts/jquery.scrollSpeed.js")
+        script(type="text/javascript" src="assets/scripts/owl.carousel.min.js")
+        script(type="text/javascript" src="assets/scripts/functions.js")
