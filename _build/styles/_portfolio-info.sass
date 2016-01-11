@@ -165,14 +165,14 @@ section.hero.portfolio-info
                             justify-content: center
                             align-items: center
                             flex-direction: column
-                            background-color: $blue-light
+                            background-color: $Grey
                             padding: 10px
                             width: 100%
                             height: 110px
                             text-align: center
                             
                             &:last-child
-                                background-color: $Grey
+                                background-color: lighten( $Grey , 15% )
                             
                             span.title
                                 font:
@@ -192,10 +192,16 @@ section.hero.portfolio-info
                             
                         &.solid
                             li:last-child
-                                background-color: $blue-light
+                                background-color: $Grey
                                 
                 .details-block
                     width: 100%
+                    
+                    .block.big h2.title
+                        height: 54px
+                        display: flex
+                        align-items: center
+                        justify-content: center
                     
                     h2.title
                         display: inline-block
@@ -223,6 +229,8 @@ section.hero.portfolio-info
                             padding: 4px 0
                             font:
                                 weight: 700
+                                family: Raleway
+                                size: 12px
                             width: 100%
                             display: inline-block
                                 
