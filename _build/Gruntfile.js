@@ -66,13 +66,21 @@ module.exports = function(grunt){
             }
         },
         
+        uglify: {
+            my_target: {
+                files: {
+                    '../assets/scripts/functions.js': ['scripts/functions.js']
+                }
+            }
+        },
+        
         watch: {
             sass: 
             {
                 files: ['styles/*.sass'],
                 tasks: ['sass','postcss:dist','rucksack'],
                 options: {
-                  livereload: true,
+                    livereload: true,
                 }
             },
             jade: 
@@ -80,14 +88,15 @@ module.exports = function(grunt){
                 files: ['pages/*.jade'],
                 tasks: ['jade'],
                 options: {
-                  livereload: true,
+                    livereload: true,
                 }
             },
             js:
             {
-                files: ['../assets/scripts/*.js'],
+                files: ['scripts/*.js'],
+                tasks: ['uglify'],
                 options: {
-                  livereload: true,
+                    livereload: true,
                 }
             }
         },
