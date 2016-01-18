@@ -37,7 +37,7 @@ section.hero.portfolio-info
                 
             &.active
                 a
-                    color: $blue-active !important
+                    color: $active-link !important
                 
         @media(max-width: 640px)
             flex-direction: column
@@ -139,7 +139,7 @@ section.hero.portfolio-info
                     width: 100%
 
                     h2.subtitle
-                        color: $blue-dark
+                        color: $secondary
                         
                     p
                         color: $black-dark
@@ -165,14 +165,14 @@ section.hero.portfolio-info
                             justify-content: center
                             align-items: center
                             flex-direction: column
-                            background-color: $Grey
+                            background-color: $shade-dark
                             padding: 10px
                             width: 100%
                             height: 110px
                             text-align: center
                             
                             &:last-child
-                                background-color: lighten( $Grey , 15% )
+                                background-color: lighten( $shade-dark , 15% )
                             
                             span.title
                                 font:
@@ -192,7 +192,7 @@ section.hero.portfolio-info
                             
                         &.solid
                             li:last-child
-                                background-color: $Grey
+                                background-color: $shade-dark
                                 
                 .details-block
                     width: 100%
@@ -210,7 +210,7 @@ section.hero.portfolio-info
                         text-align: center
                         color: $white-light
                         text-transform: uppercase
-                        background-color: $Grey
+                        background-color: $shade-dark
                         font:
                             size: 16px
                             weight: 900
@@ -235,7 +235,7 @@ section.hero.portfolio-info
                             display: inline-block
                                 
                         li + li
-                            border-top: 1px solid rgba( $Grey , 0.60 )
+                            border-top: 1px solid rgba( $shade-dark , 0.60 )
                             
                         li > ul > li
                             padding-left: 10px
@@ -260,7 +260,7 @@ section.hero.portfolio-info
                         max-width: 60%
                         
                     span
-                        color: $blue-light
+                        color: $primary
                         font:
                             size: 22px
                             weight: 400
