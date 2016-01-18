@@ -1,18 +1,18 @@
 section.hero.about
-    background: 
+    background:
         image: url(../images/hero-section/about.jpg)
-        
+
 .contents-about
     padding-bottom: 0
 
     map
-        area 
+        area
             cursor: pointer !important
 
     .map-right
 
         p.info
-            font: 
+            font:
                 size: 24px
                 color: $black-dark
 
@@ -41,7 +41,7 @@ section.hero.about
                 color: $black-light
                 font:
                     size: 22px
-                    weight: 900 
+                    weight: 900
 
                 transition: all 0.3s ease-in-out
 
@@ -55,7 +55,7 @@ section.hero.about
                 padding: 10px 0
                 text-transform: uppercase
                 text-align: center
-                font: 
+                font:
                     size: 16px
                     color: $black-light
 
@@ -65,7 +65,7 @@ section.hero.about
                 align-items: center
                 justify-content: space-between
                 flex-direction: row
-                
+
                 @media( max-width: 960px )
                     flex-direction: column
 
@@ -92,27 +92,27 @@ section.hero.about
                         font:
                             size: 18px
                             weight: 900
-                            
-                            
+
+
     p.headline
         font:
             size: 18px
             weight: 400
         word-break: keep-all
         text-align: justify
-            
+
     .about-box
         width: 100%
-        
+
         .box
             display: flex
             align-items: center
             justify-content: center
             flex-direction: row
-            
+
             @media( max-width: 960px )
                 flex-direction: column
-            
+
             .box-title
                 background:
                     color: $blue-light
@@ -121,19 +121,19 @@ section.hero.about
                 width: 50%
                 order: 1
                 height: 100%
-                
+
                 &:not(.second)
                     text-align: right
-                
+
                 &.second
                     order: 3 !important
-                
+
                     @media( max-width: 960px )
                         order: 1 !important
-                    
+
                 @media( max-width: 960px )
                     width: 100%
-                
+
                 h2
                     font:
                         size: 36px
@@ -144,10 +144,10 @@ section.hero.about
                 order: 2
                 padding: 25px 20px
                 position: relative
-                
+
                 @media( max-width: 960px )
                     width: 100%
-                
+
                 span
                     display: block
                     width: 80px
@@ -156,23 +156,32 @@ section.hero.about
                     margin: 20px 0
                     position: absolute
                     top: -6px
-                    
+
                     @media( max-width: 640px )
                         display: none
-                    
+
                     &.right
                         right: 20px
                     &.left
                         left: 20px
-                
+
                 p
                     float: left
                     clear: both
                     display: block
                     font:
                         size: 16px
-                
-                        
+                    max-width: 550px
+
+                    &.right
+                        float: right
+
+                    @media( max-width: 960px )
+                        width: 100%
+                        max-width: auto !important
+                        float: left !important
+
+
     .about-icon
         width: 100%
         display: flex
@@ -181,7 +190,7 @@ section.hero.about
         flex-direction: column
         text-align: center
         padding: 20px 0
-        
+
         .icon
             display: flex
             align-items: center
@@ -191,7 +200,7 @@ section.hero.about
             border: solid 4px $blue-light
             border-radius: 50%
             position: relative
-            
+
             &:before , &:after
                 content: ""
                 position: absolute
@@ -200,25 +209,25 @@ section.hero.about
                 top: 50%
                 margin-top: -1px
                 background: $blue-light
-            
+
             &:before
                 left: -50px
-            
+
             &:after
                 right: -50px
-            
+
         .title
             padding: 10px 0
             min-height: 65px
-            font: 
+            font:
                 size: 16px
         .text
             word-break: keep-all
             text-align: justify
             text-justify: distribute
-            font: 
+            font:
                 size: 14px
-        
+
     a.next
         position: absolute
         right: -50px
@@ -239,30 +248,30 @@ section.hero.about
 
         &:hover
             color: $blue-dark
-                
-                
+
+
     .carousel-item
         width: 100%
         height: auto
         position: relative
-        
+
         h2.name
             font-weight: 300
             padding: 0 0 20px 0
             margin: 0
-            
+
             &.teamdubble
                 color: $blue-light
                 text-transform: capitalize
                 font:
                     size: 18px
                     weight: 900
-            
+
             strong
                 color: $blue-light
                 padding: 0 14px
                 font-weight: 900
-                
+
         p
             font-size: 14px
             padding: 6px 0
